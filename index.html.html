@@ -102,6 +102,7 @@
     .btn:hover { background: var(--black); color: var(--white); text-decoration: none; }
     .btn.ghost { border-color: var(--border); color: var(--mid); }
     .btn.ghost:hover { border-color: var(--black); color: var(--black); background: transparent; }
+    .linkedin-btn { display: inline-flex; align-items: center; justify-content: center; padding: 7px 10px; }
 
     /* SECTION HEADER */
     .section-label {
@@ -366,8 +367,7 @@
     </p>
     <div class="hero-links">
       <a class="btn" href="mailto:julia.utomo@gmail.com">Let's connect</a>
-      <a class="btn ghost" href="https://www.upwork.com/freelancers/~015ef575b3e317fd5f" target="_blank">Upwork Profile</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn</a>
+      <a class="btn ghost linkedin-btn" href="https://www.linkedin.com/in/juliautomo" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     </div>
   </section>
 
@@ -599,8 +599,7 @@
     </p>
     <div class="contact-row">
       <a class="btn" href="mailto:julia.utomo@gmail.com">Let's connect</a>
-      <a class="btn ghost" href="https://www.upwork.com/freelancers/~015ef575b3e317fd5f" target="_blank">Upwork</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn</a>
+      <a class="btn ghost linkedin-btn" href="https://www.linkedin.com/in/juliautomo" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     </div>
   </section>
 
@@ -632,33 +631,4 @@
         track.style.transform = 'translateX(-' + (100 * current) + '%)';
         dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
           d.classList.toggle('active', i === current);
-        });
-        counter.textContent = (current + 1) + ' / ' + total;
-        prevBtn.disabled = current === 0;
-        nextBtn.disabled = current === total - 1;
-      }
-
-      prevBtn.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
-      nextBtn.addEventListener('click', () => { if (current < total - 1) goTo(current + 1); });
-
-      // Keyboard nav when section is in view
-      document.addEventListener('keydown', e => {
-        if (e.key === 'ArrowLeft') prevBtn.click();
-        if (e.key === 'ArrowRight') nextBtn.click();
-      });
-
-      // Touch/swipe support
-      let startX = 0;
-      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend', e => {
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) diff > 0 ? nextBtn.click() : prevBtn.click();
-      }, { passive: true });
-
-      goTo(0);
-    })();
-  </script>
-
-</body>
-</html>
-                                              
+   
