@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julia Utomo — Business & Data Analyst | AI Builder</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --dark: #222222;
+      --mid: #555555;
+      --light: #aaaaaa;
+      --border: #e0e0e0;
+      --bg: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48px;
+      height: 60px;
+      z-index: 100;
+    }
+    .nav-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--black);
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--mid);
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { color: var(--black); text-decoration: none; }
+
+    /* SECTIONS */
+    section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 96px 24px 64px;
+    }
+    section:first-of-type { padding-top: 140px; }
+
+    /* HERO */
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--light); }
+    .hero p {
+      margin-top: 24px;
+      font-size: 17px;
+      color: var(--mid);
+      max-width: 560px;
+    }
+    .hero-links {
+      margin-top: 36px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border: 1.5px solid var(--black);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn:hover { background: var(--black); color: var(--white); text-decoration: none; }
+    .btn.ghost { border-color: var(--border); color: var(--mid); }
+    .btn.ghost:hover { border-color: var(--black); color: var(--black); background: transparent; }
+
+    /* SECTION HEADER */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 40px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .skill-tag {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px 16px;
+      font-size: 13px;
+      color: var(--dark);
+    }
+
+    /* PROJECTS */
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 36px;
+      margin-bottom: 20px;
+      background: var(--white);
+      transition: border-color 0.15s;
+    }
+    .project-card:hover { border-color: #999; }
+    .project-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 12px;
+    }
+    .project-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    .project-card p {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .project-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .chip {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: var(--mid);
+    }
+    .project-media {
+      margin-top: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .project-media img {
+      width: 100%;
+      display: block;
+    }
+
+    /* CAROUSEL */
+    .carousel-wrap {
+      position: relative;
+    }
+    .carousel-track-outer {
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.35s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      background: var(--white);
+    }
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: var(--bg);
+    }
+    .carousel-caption {
+      padding: 20px 24px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .carousel-caption .cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 6px;
+    }
+    .carousel-caption h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .carousel-caption p {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+    .carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+    }
+    .carousel-arrows {
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      cursor: pointer;
+      font-size: 16px;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.15s, background 0.15s;
+      line-height: 1;
+    }
+    .carousel-btn:hover { border-color: var(--black); background: var(--black); color: var(--white); }
+    .carousel-btn:disabled { opacity: 0.3; cursor: default; }
+    .carousel-btn:disabled:hover { border-color: var(--border); background: var(--white); color: var(--dark); }
+    .carousel-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .dot.active {
+      background: var(--black);
+      transform: scale(1.3);
+    }
+    .carousel-counter {
+      font-size: 13px;
+      color: var(--light);
+    }
+
+    /* CAREER */
+    .career-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .career-item:first-child { border-top: 1px solid var(--border); }
+    .career-date {
+      font-size: 13px;
+      color: var(--light);
+      padding-top: 2px;
+    }
+    .career-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .career-content .company {
+      font-size: 14px;
+      color: var(--mid);
+      margin-top: 2px;
+    }
+    .career-content p {
+      font-size: 14px;
+      color: var(--mid);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13px;
+      color: var(--light);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 20px; }
+      .career-item { grid-template-columns: 1fr; gap: 4px; }
+      .career-date { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-name">Julia Utomo</span>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#samples">Samples</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <h1>Business &amp; Data Analyst<br/><span>AI Builder</span></h1>
+    <p>
+      I help organisations make sense of their data — and build AI-powered tools that make that process faster, smarter, and more useful.
+      Based in Jakarta, open to remote and relocation.
+    </p>
+    <div class="hero-links">
+      <a class="btn" href="mailto:julia.utomo@gmail.com">Get in touch</a>
+      <a class="btn ghost" href="https://www.upwork.com/freelancers/~015ef575b3e317fd5f" target="_blank">Upwork Profile</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label">Skills &amp; Tools</p>
+    <div class="skills-grid">
+      <div class="skill-tag">Claude AI &amp; ChatGPT</div>
+      <div class="skill-tag">Power BI</div>
+      <div class="skill-tag">Looker Studio</div>
+      <div class="skill-tag">Tableau</div>
+      <div class="skill-tag">SQL</div>
+      <div class="skill-tag">Microsoft Excel</div>
+      <div class="skill-tag">Google Sheets</div>
+      <div class="skill-tag">Google Apps Script</div>
+      <div class="skill-tag">Data Analysis</div>
+      <div class="skill-tag">Dashboard Design</div>
+      <div class="skill-tag">Process Automation</div>
+      <div class="skill-tag">Product Management</div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Projects</p>
+
+    <div class="project-card">
+      <span class="project-tag">Featured · AI App</span>
+      <h3>Innovation Analytics Dashboard</h3>
+      <p>
+        A full-stack analytics application built with AI, turning a complex multi-year innovation dataset into an interactive,
+        multi-page dashboard. Features Sankey diagrams tracking innovation readiness journeys, use-gap analysis,
+        investment breakdowns, and AI-generated key insights — all filterable by center, country, program, and funding source.
+      </p>
+      <div class="project-chips">
+        <span class="chip">Lovable (AI Builder)</span>
+        <span class="chip">React</span>
+        <span class="chip">Data Visualisation</span>
+        <span class="chip">Sankey Diagrams</span>
+        <span class="chip">Multi-page App</span>
+      </div>
+      <div class="project-media">
+        <img src="innovation-analytics-demo.gif" alt="Innovation Analytics Dashboard demo" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">AI Tool</span>
+      <h3>BizAnalyst AI Dashboard</h3>
+      <p>
+        An AI-powered analytics tool where clients simply upload their Excel data and get an automated, interactive dashboard in return.
+        Built with a chatbot interface so users can explore their data and generate insights without any technical setup.
+        Reduces reporting time significantly and makes data accessible to non-technical teams.
+      </p>
+      <div class="project-chips">
+        <span class="chip">Claude AI</span>
+        <span class="chip">Data Automation</span>
+        <span class="chip">Dashboard</span>
+        <span class="chip">Excel Integration</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">AI Tool</span>
+      <h3>Marketing Agent</h3>
+      <p>
+        An AI agent that handles end-to-end marketing workflows — content generation, campaign planning, and scheduling.
+        Built to help small businesses and teams move faster on marketing without needing a dedicated team behind it.
+      </p>
+      <div class="project-chips">
+        <span class="chip">Claude AI</span>
+        <span class="chip">Content Generation</span>
+        <span class="chip">Campaign Planning</span>
+        <span class="chip">Automation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-tag">Freelance Work</span>
+      <h3>Client Dashboards &amp; Analytics</h3>
+      <p>
+        Ongoing freelance work building custom dashboards, performance reports, and data solutions for clients across
+        Financial Services, Non-Profit, F&amp;B, Manufacturing, and Real Estate.
+        Each project starts with understanding the business problem and ends with something the team actually uses.
+      </p>
+      <div class="project-chips">
+        <span class="chip">Power BI</span>
+        <span class="chip">Looker Studio</span>
+        <span class="chip">Google Sheets</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Excel</span>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- WORK SAMPLES -->
+  <section id="samples">
+    <p class="section-label">Work Samples</p>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="carousel-slide">
+            <img src="Power BI/Warehouse Dashboard - Power BI.png" alt="Warehouse Dashboard" />
+            <div class="carousel-caption">
+              <div class="cat">Power BI · Supply Chain</div>
+              <h4>Warehouse Dashboard</h4>
+              <p>Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs. Built for a distribution client to give the ops team a daily snapshot without digging through raw data.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="Screenshot 2024-06-28 092455.png" alt="Board Report FY25" />
+            <div class="carousel-caption">
+              <div class="cat">Power BI · Executive Reporting</div>
+              <h4>Board Report FY25</h4>
+              <p>End-of-year board report designed to communicate performance to executive stakeholders. Clean layout with headline metrics, program outcomes, and year-on-year comparisons — built so non-technical leadership could navigate it without guidance.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="Excel GSheet Dashboard/Excel Dashboard Sample 5.png" alt="Performance Report 2024" />
+            <div class="carousel-caption">
+              <div class="cat">Excel · Sales Forecasting</div>
+              <h4>Performance Report 2024</h4>
+              <p>Sales forecast model with segment-level breakdowns and monthly target tracking. Built in Excel with dynamic charts so the team could run scenarios and present to leadership without needing a separate BI tool.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="GDS Looker/Sales Dashboard - Looker Studio.png" alt="Sales Dashboard Looker Studio" />
+            <div class="carousel-caption">
+              <div class="cat">Looker Studio · Retail</div>
+              <h4>Sales Dashboard</h4>
+              <p>Sales performance dashboard built in Looker Studio for a retail client. Tracks revenue by channel, region, and product category — connected live to data sources so the team always had an up-to-date view without manual exports.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="GDS Looker/Google Analytics 1 - Looker Studio.png" alt="Google Analytics Dashboard" />
+            <div class="carousel-caption">
+              <div class="cat">Looker Studio · Digital Analytics</div>
+              <h4>Google Analytics Dashboard</h4>
+              <p>Digital analytics dashboard connecting Google Analytics data to Looker Studio. Gives marketing teams a live view of traffic, engagement, and conversion across channels — eliminating the need to log into GA for routine reporting.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="Power BI/Sales Dashboard - Power BI.png" alt="Sales Dashboard Power BI" />
+            <div class="carousel-caption">
+              <div class="cat">Power BI · KPI &amp; Geography</div>
+              <h4>Sales Dashboard</h4>
+              <p>KPI-focused sales dashboard with a geographic territory breakdown. Designed for use in weekly sales reviews — one screen gives leadership a complete picture of performance by region, product, and period.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-nav">
+        <div class="carousel-arrows">
+          <button class="carousel-btn" id="carouselPrev" aria-label="Previous">&#8592;</button>
+          <button class="carousel-btn" id="carouselNext" aria-label="Next">&#8594;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-counter" id="carouselCounter">1 / 6</div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- CAREER -->
+  <section id="career">
+    <p class="section-label">Career History</p>
+
+    <div class="career-item">
+      <div class="career-date">Nov 2023 — Present</div>
+      <div class="career-content">
+        <h4>Business / Data Analyst Consultant</h4>
+        <div class="company">Freelance</div>
+        <p>Working with clients across Financial Services, Non-Profit, F&B, Manufacturing, and Real Estate to build dashboards, automate reporting, and make data actually usable. Also building AI-powered tools and automation projects on the side.</p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-date">Oct 2022 — Nov 2023</div>
+      <div class="career-content">
+        <h4>Product Manager II — Supply Chain</h4>
+        <div class="company">GudangAda · Jakarta</div>
+        <p>Led product for procurement, warehouse management, and transport management systems at one of Indonesia's largest B2B e-commerce platforms. Improved fleet productivity by ~30% through smarter routing and planning features.</p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-date">Jan 2021 — Apr 2022</div>
+      <div class="career-content">
+        <h4>Product Owner</h4>
+        <div class="company">Anteraja · Jakarta</div>
+        <p>Built and launched a referral program that drove ~18% of new user registrations in its first month. Cut maps API cost by 85% through data-driven optimisation. Grew loyalty and promo features contributing to ~28% average monthly user growth.</p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-date">Jan 2019 — Sep 2020</div>
+      <div class="career-content">
+        <h4>Management Consultant</h4>
+        <div class="company">Kearney · Jakarta</div>
+        <p>Strategy and implementation projects for healthcare and government clients. Built end-to-end performance dashboards using Power BI and SQL, and led operational efficiency programs across manufacturing plants and retail networks.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <hr />
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <p style="color: var(--mid); font-size: 15px; margin-bottom: 24px;">
+      Open to freelance projects, full-time roles, and remote opportunities. Based in Jakarta — open to relocation to Australia.
+    </p>
+    <div class="contact-row">
+      <a class="btn" href="mailto:julia.utomo@gmail.com">julia.utomo@gmail.com</a>
+      <a class="btn ghost" href="https://www.upwork.com/freelancers/~015ef575b3e317fd5f" target="_blank">Upwork</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Julia Utomo
+  </footer>
+
+  <script>
+    (function() {
+      const track = document.getElementById('carouselTrack');
+      const dotsContainer = document.getElementById('carouselDots');
+      const counter = document.getElementById('carouselCounter');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      const slides = track.querySelectorAll('.carousel-slide');
+      const total = slides.length;
+      let current = 0;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function goTo(index) {
+        current = index;
+        track.style.transform = 'translateX(-' + (100 * current) + '%)';
+        dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+        counter.textContent = (current + 1) + ' / ' + total;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+      }
+
+      prevBtn.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+      nextBtn.addEventListener('click', () => { if (current < total - 1) goTo(current + 1); });
+
+      // Keyboard nav when section is in view
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+      });
+
+      // Touch/swipe support
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) diff > 0 ? nextBtn.click() : prevBtn.click();
+      }, { passive: true });
+
+      goTo(0);
+    })();
+  </script>
+
+</body>
+</html>
