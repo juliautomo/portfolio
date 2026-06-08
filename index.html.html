@@ -130,16 +130,50 @@
       color: var(--dark);
     }
 
-    /* PROJECTS */
-    .project-card {
+    /* FILTER CHIPS */
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .filter-chip {
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--mid);
+      background: var(--white);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-chip:hover { border-color: var(--black); color: var(--black); }
+    .filter-chip.active { background: var(--black); color: var(--white); border-color: var(--black); }
+
+    /* PROJECTS GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .project-item {
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 36px;
-      margin-bottom: 20px;
+      overflow: hidden;
       background: var(--white);
       transition: border-color 0.15s;
     }
-    .project-card:hover { border-color: #999; }
+    .project-item:hover { border-color: #999; }
+    .project-item img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--bg);
+    }
+    .project-item-body {
+      padding: 20px 24px 24px;
+    }
     .project-tag {
       display: inline-block;
       font-size: 11px;
@@ -147,42 +181,33 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--light);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    .project-card h3 {
-      font-size: 20px;
+    .project-item h3 {
+      font-size: 16px;
       font-weight: 700;
       color: var(--black);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    .project-card p {
-      font-size: 15px;
+    .project-item p {
+      font-size: 13px;
       color: var(--mid);
-      line-height: 1.7;
+      line-height: 1.65;
     }
+    .project-item.hidden { display: none; }
     .project-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
+      gap: 6px;
+      margin-top: 14px;
     }
     .chip {
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 100px;
-      padding: 4px 12px;
-      font-size: 12px;
+      padding: 3px 10px;
+      font-size: 11px;
       color: var(--mid);
-    }
-    .project-media {
-      margin-top: 24px;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .project-media img {
-      width: 100%;
-      display: block;
     }
 
     /* CAROUSEL */
@@ -342,6 +367,7 @@
       .nav-links { gap: 20px; }
       .career-item { grid-template-columns: 1fr; gap: 4px; }
       .career-date { font-size: 12px; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -353,7 +379,6 @@
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#samples">Samples</a></li>
       <li><a href="#career">Career</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -395,154 +420,114 @@
 
   <hr />
 
-  <!-- PROJECTS -->
+  <!-- SAMPLE PROJECTS -->
   <section id="projects">
-    <p class="section-label">Projects</p>
+    <p class="section-label">Sample Projects</p>
 
-    <div class="project-card">
-      <span class="project-tag">Featured · AI App</span>
-      <h3>Innovation Analytics Dashboard</h3>
-      <p>
-        A full-stack analytics application built with AI, turning a complex multi-year innovation dataset into an interactive,
-        multi-page dashboard. Features Sankey diagrams tracking innovation readiness journeys, use-gap analysis,
-        investment breakdowns, and AI-generated key insights — all filterable by center, country, program, and funding source.
-      </p>
-      <div class="project-chips">
-        <span class="chip">Lovable (AI Builder)</span>
-        <span class="chip">React</span>
-        <span class="chip">Data Visualisation</span>
-        <span class="chip">Sankey Diagrams</span>
-        <span class="chip">Multi-page App</span>
-      </div>
-      <div class="project-media">
-        <img src="innovation-analytics-demo.gif" alt="Innovation Analytics Dashboard demo" loading="lazy" />
-      </div>
+    <div class="filter-chips">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="powerbi">Power BI</button>
+      <button class="filter-chip" data-filter="looker">Looker Studio</button>
+      <button class="filter-chip" data-filter="excel">Excel</button>
+      <button class="filter-chip" data-filter="ai">AI Tools</button>
     </div>
 
-    <div class="project-card">
-      <span class="project-tag">AI Tool</span>
-      <h3>BizAnalyst AI Dashboard</h3>
-      <p>
-        An AI-powered analytics tool where clients simply upload their Excel data and get an automated, interactive dashboard in return.
-        Built with a chatbot interface so users can explore their data and generate insights without any technical setup.
-        Reduces reporting time significantly and makes data accessible to non-technical teams.
-      </p>
-      <div class="project-chips">
-        <span class="chip">Claude AI</span>
-        <span class="chip">Data Automation</span>
-        <span class="chip">Dashboard</span>
-        <span class="chip">Excel Integration</span>
-      </div>
-    </div>
+    <div class="projects-grid" id="projectsGrid">
 
-    <div class="project-card">
-      <span class="project-tag">AI Tool</span>
-      <h3>Marketing Agent</h3>
-      <p>
-        An AI agent that handles end-to-end marketing workflows — content generation, campaign planning, and scheduling.
-        Built to help small businesses and teams move faster on marketing without needing a dedicated team behind it.
-      </p>
-      <div class="project-chips">
-        <span class="chip">Claude AI</span>
-        <span class="chip">Content Generation</span>
-        <span class="chip">Campaign Planning</span>
-        <span class="chip">Automation</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <span class="project-tag">Freelance Work</span>
-      <h3>Client Dashboards &amp; Analytics</h3>
-      <p>
-        Ongoing freelance work building custom dashboards, performance reports, and data solutions for clients across
-        Financial Services, Non-Profit, F&amp;B, Manufacturing, and Real Estate.
-        Each project starts with understanding the business problem and ends with something the team actually uses.
-      </p>
-      <div class="project-chips">
-        <span class="chip">Power BI</span>
-        <span class="chip">Looker Studio</span>
-        <span class="chip">Google Sheets</span>
-        <span class="chip">SQL</span>
-        <span class="chip">Excel</span>
-      </div>
-    </div>
-  </section>
-
-  <hr />
-
-  <!-- WORK SAMPLES -->
-  <section id="samples">
-    <p class="section-label">Work Samples</p>
-
-    <div class="carousel-wrap">
-      <div class="carousel-track-outer">
-        <div class="carousel-track" id="carouselTrack">
-
-          <div class="carousel-slide">
-            <img src="Power BI/Warehouse Dashboard - Power BI.png" alt="Warehouse Dashboard" />
-            <div class="carousel-caption">
-              <div class="cat">Power BI · Supply Chain</div>
-              <h4>Warehouse Dashboard</h4>
-              <p>Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs. Built for a distribution client to give the ops team a daily snapshot without digging through raw data.</p>
-            </div>
+      <div class="project-item" data-tool="ai">
+        <img src="innovation-analytics-demo.gif" alt="Innovation Analytics Dashboard" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Featured · AI App</span>
+          <h3>Innovation Analytics Dashboard</h3>
+          <p>Full-stack analytics app built with AI — multi-page dashboard with Sankey diagrams, use-gap analysis, and AI-generated insights, all filterable by center, country, and funding source.</p>
+          <div class="project-chips">
+            <span class="chip">Lovable</span>
+            <span class="chip">React</span>
+            <span class="chip">AI Builder</span>
           </div>
-
-          <div class="carousel-slide">
-            <img src="Screenshot 2024-06-28 092455.png" alt="Board Report FY25" />
-            <div class="carousel-caption">
-              <div class="cat">Power BI · Executive Reporting</div>
-              <h4>Board Report FY25</h4>
-              <p>End-of-year board report designed to communicate performance to executive stakeholders. Clean layout with headline metrics, program outcomes, and year-on-year comparisons — built so non-technical leadership could navigate it without guidance.</p>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <img src="Excel GSheet Dashboard/Excel Dashboard Sample 5.png" alt="Performance Report 2024" />
-            <div class="carousel-caption">
-              <div class="cat">Excel · Sales Forecasting</div>
-              <h4>Performance Report 2024</h4>
-              <p>Sales forecast model with segment-level breakdowns and monthly target tracking. Built in Excel with dynamic charts so the team could run scenarios and present to leadership without needing a separate BI tool.</p>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <img src="GDS Looker/Sales Dashboard - Looker Studio.png" alt="Sales Dashboard Looker Studio" />
-            <div class="carousel-caption">
-              <div class="cat">Looker Studio · Retail</div>
-              <h4>Sales Dashboard</h4>
-              <p>Sales performance dashboard built in Looker Studio for a retail client. Tracks revenue by channel, region, and product category — connected live to data sources so the team always had an up-to-date view without manual exports.</p>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <img src="GDS Looker/Google Analytics 1 - Looker Studio.png" alt="Google Analytics Dashboard" />
-            <div class="carousel-caption">
-              <div class="cat">Looker Studio · Digital Analytics</div>
-              <h4>Google Analytics Dashboard</h4>
-              <p>Digital analytics dashboard connecting Google Analytics data to Looker Studio. Gives marketing teams a live view of traffic, engagement, and conversion across channels — eliminating the need to log into GA for routine reporting.</p>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <img src="Power BI/Sales Dashboard - Power BI.png" alt="Sales Dashboard Power BI" />
-            <div class="carousel-caption">
-              <div class="cat">Power BI · KPI &amp; Geography</div>
-              <h4>Sales Dashboard</h4>
-              <p>KPI-focused sales dashboard with a geographic territory breakdown. Designed for use in weekly sales reviews — one screen gives leadership a complete picture of performance by region, product, and period.</p>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <div class="carousel-nav">
-        <div class="carousel-arrows">
-          <button class="carousel-btn" id="carouselPrev" aria-label="Previous">&#8592;</button>
-          <button class="carousel-btn" id="carouselNext" aria-label="Next">&#8594;</button>
+      <div class="project-item" data-tool="powerbi">
+        <img src="Power BI/Warehouse Dashboard - Power BI.png" alt="Warehouse Dashboard" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Power BI · Supply Chain</span>
+          <h3>Warehouse Dashboard</h3>
+          <p>Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs — built to give an ops team a daily snapshot without digging through raw data.</p>
         </div>
-        <div class="carousel-dots" id="carouselDots"></div>
-        <div class="carousel-counter" id="carouselCounter">1 / 6</div>
       </div>
+
+      <div class="project-item" data-tool="powerbi">
+        <img src="Screenshot 2024-06-28 092455.png" alt="Board Report FY25" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Power BI · Executive Reporting</span>
+          <h3>Board Report FY25</h3>
+          <p>End-of-year board report with headline metrics, program outcomes, and year-on-year comparisons — designed so non-technical leadership could navigate it without guidance.</p>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="powerbi">
+        <img src="Power BI/Sales Dashboard - Power BI.png" alt="Sales Dashboard Power BI" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Power BI · KPI &amp; Geography</span>
+          <h3>Sales Dashboard</h3>
+          <p>KPI-focused sales dashboard with geographic territory breakdown — one screen giving leadership a complete picture of performance by region, product, and period.</p>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="looker">
+        <img src="GDS Looker/Sales Dashboard - Looker Studio.png" alt="Sales Dashboard Looker Studio" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Looker Studio · Retail</span>
+          <h3>Sales Dashboard</h3>
+          <p>Sales performance dashboard for a retail client — tracks revenue by channel, region, and product category, connected live to data sources so the team always had an up-to-date view.</p>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="looker">
+        <img src="GDS Looker/Google Analytics 1 - Looker Studio.png" alt="Google Analytics Dashboard" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Looker Studio · Digital Analytics</span>
+          <h3>Google Analytics Dashboard</h3>
+          <p>Live digital analytics dashboard connecting GA data to Looker Studio — gives marketing teams a real-time view of traffic, engagement, and conversion without logging into GA.</p>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="excel">
+        <img src="Excel GSheet Dashboard/Excel Dashboard Sample 5.png" alt="Performance Report 2024" loading="lazy" />
+        <div class="project-item-body">
+          <span class="project-tag">Excel · Sales Forecasting</span>
+          <h3>Performance Report 2024</h3>
+          <p>Sales forecast model with segment-level breakdowns and monthly target tracking — built so the team could run scenarios and present to leadership without needing a separate BI tool.</p>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="ai">
+        <div class="project-item-body" style="padding: 28px 24px;">
+          <span class="project-tag">AI Tool</span>
+          <h3>BizAnalyst AI Dashboard</h3>
+          <p>Upload Excel data, get an automated interactive dashboard in return. Built with a chatbot interface so non-technical users can explore data and generate insights without any setup.</p>
+          <div class="project-chips">
+            <span class="chip">Claude AI</span>
+            <span class="chip">Data Automation</span>
+            <span class="chip">Excel Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="ai">
+        <div class="project-item-body" style="padding: 28px 24px;">
+          <span class="project-tag">AI Tool</span>
+          <h3>Marketing Agent</h3>
+          <p>AI agent handling end-to-end marketing workflows — content generation, campaign planning, and scheduling. Built to help small teams move faster without needing a dedicated marketing hire.</p>
+          <div class="project-chips">
+            <span class="chip">Claude AI</span>
+            <span class="chip">Content Generation</span>
+            <span class="chip">Automation</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -610,22 +595,25 @@
 
   <script>
     (function() {
-      const track = document.getElementById('carouselTrack');
-      const dotsContainer = document.getElementById('carouselDots');
-      const counter = document.getElementById('carouselCounter');
-      const prevBtn = document.getElementById('carouselPrev');
-      const nextBtn = document.getElementById('carouselNext');
-      const slides = track.querySelectorAll('.carousel-slide');
-      const total = slides.length;
-      let current = 0;
-
-      // Build dots
-      slides.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
+      const chips = document.querySelectorAll('.filter-chip');
+      const items = document.querySelectorAll('.project-item');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const filter = chip.dataset.filter;
+          items.forEach(item => {
+            if (filter === 'all' || item.dataset.tool === filter) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        });
       });
+    })();
+  </script>
 
-      function goTo(index) {
-        current 
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
