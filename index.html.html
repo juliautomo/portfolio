@@ -116,18 +116,20 @@
     }
 
     /* SKILLS */
-    .skills-grid {
+    .skills-list { display: flex; flex-direction: column; }
+    .skill-row {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
+      grid-template-columns: 210px 1fr;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
     }
-    .skill-tag {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 10px 16px;
-      font-size: 13px;
-      color: var(--dark);
+    .skill-row:first-child { border-top: 1px solid var(--border); }
+    .skill-cat { font-size: 14px; font-weight: 700; color: var(--black); }
+    .skill-tools { font-size: 14px; color: var(--mid); line-height: 1.6; }
+    @media (max-width: 600px) {
+      .skill-row { grid-template-columns: 1fr; gap: 4px; }
     }
 
     /* FILTER CHIPS */
@@ -402,19 +404,27 @@
   <!-- SKILLS -->
   <section id="skills">
     <p class="section-label">Skills &amp; Tools</p>
-    <div class="skills-grid">
-      <div class="skill-tag">Claude AI &amp; ChatGPT</div>
-      <div class="skill-tag">Power BI</div>
-      <div class="skill-tag">Looker Studio</div>
-      <div class="skill-tag">Tableau</div>
-      <div class="skill-tag">SQL</div>
-      <div class="skill-tag">Microsoft Excel</div>
-      <div class="skill-tag">Google Sheets</div>
-      <div class="skill-tag">Google Apps Script</div>
-      <div class="skill-tag">Data Analysis</div>
-      <div class="skill-tag">Dashboard Design</div>
-      <div class="skill-tag">Process Automation</div>
-      <div class="skill-tag">Product Management</div>
+    <div class="skills-list">
+      <div class="skill-row">
+        <span class="skill-cat">Reporting &amp; Dashboards</span>
+        <span class="skill-tools">Power BI, Looker Studio, Tableau, Excel, Google Sheets</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Data Preparation &amp; Modelling</span>
+        <span class="skill-tools">SQL, Power Query, DAX, star schema design, data cleaning</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">AI &amp; Automation</span>
+        <span class="skill-tools">Claude AI, ChatGPT, Lovable, Google Apps Script, process automation</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Analytics &amp; Insights</span>
+        <span class="skill-tools">Google Analytics, supply chain analytics, KPI design, financial analysis</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Stakeholder &amp; Delivery</span>
+        <span class="skill-tools">Requirements gathering, dashboard design, user training, documentation</span>
+      </div>
     </div>
   </section>
 
@@ -616,4 +626,4 @@
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                            
