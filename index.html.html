@@ -703,4 +703,13 @@
         if (currentPage > 0) { currentPage--; render(); }
       });
       nextBtn.addEventListener('click', function() {
-        var totalPages = Math.ceil(visibleItems.length / PE
+        var totalPages = Math.ceil(visibleItems.length / PER_PAGE);
+        if (currentPage < totalPages - 1) { currentPage++; render(); }
+      });
+
+      render();
+    });
+  </script>
+
+</body>
+</html>
