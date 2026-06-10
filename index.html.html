@@ -347,6 +347,73 @@
       color: var(--mid);
     }
 
+
+    /* MINI CAROUSEL (multi-photo project cards) */
+    .carousel-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.35s ease;
+    }
+    .carousel-track .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .carousel-track .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-dots {
+      position: absolute;
+      bottom: 46px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 3;
+    }
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active { background: #fff; }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.45);
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .carousel-wrap:hover .carousel-arrow { opacity: 1; }
+    .carousel-arrow.prev { left: 8px; }
+    .carousel-arrow.next { right: 8px; }
+
     /* PAGINATION */
     .proj-nav {
       display: flex;
@@ -603,6 +670,46 @@
         </div>
       </div>
 
+      <div class="project-item" data-tool="looker">
+        <div class="carousel-wrap" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="GDS Looker/Marketing Looker Studio.png" alt="Marketing Overview Dashboard" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="GDS Looker/Google Analytics 1 - Looker Studio.png" alt="Google Analytics Dashboard" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="GDS Looker/Google Ads 1 - Looker Studio.png" alt="Google Ads Overview" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="GDS Looker/Google Ads 2 - Looker Studio.png" alt="Google Ads Campaigns" loading="lazy" />
+            </div>
+          </div>
+          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
+          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
+          <div class="carousel-dots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+            <span class="carousel-dot" data-index="2"></span>
+            <span class="carousel-dot" data-index="3"></span>
+          </div>
+          <div class="project-img-overlay">
+            <span class="overlay-cat">Looker Studio · Digital Marketing</span>
+            <p class="overlay-title">Marketing Dashboard</p>
+          </div>
+        </div>
+        <div class="project-item-body">
+          <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:10px;">End-to-end marketing dashboard covering site traffic, audience behaviour, and Google Ads performance — giving teams a single view to track spend, conversions, and channel effectiveness.</p>
+          <div class="project-chips">
+            <span class="chip">Looker Studio</span>
+            <span class="chip">Google Analytics</span>
+            <span class="chip">Google Ads</span>
+            <span class="chip">Digital Marketing</span>
+          </div>
+        </div>
+      </div>
+
       <div class="project-item" data-tool="excel">
         <div class="project-img-wrap">
           <img src="Excel GSheet Dashboard/Excel Dashboard Sample 5.png" alt="Performance Report 2024" loading="lazy" />
@@ -780,6 +887,31 @@
 
       render();
     });
+
+  // Mini carousel init
+  document.querySelectorAll('[data-carousel]').forEach(function(wrap) {
+    var track = wrap.querySelector('.carousel-track');
+    var dots = wrap.querySelectorAll('.carousel-dot');
+    var prevBtn = wrap.querySelector('.carousel-arrow.prev');
+    var nextBtn = wrap.querySelector('.carousel-arrow.next');
+    var total = wrap.querySelectorAll('.carousel-slide').length;
+    var current = 0;
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    prevBtn.addEventListener('click', function(e) { e.stopPropagation(); goTo(current - 1); });
+    nextBtn.addEventListener('click', function(e) { e.stopPropagation(); goTo(current + 1); });
+    dots.forEach(function(d) {
+      d.addEventListener('click', function(e) { e.stopPropagation(); goTo(parseInt(d.dataset.index)); });
+    });
+  });
+
   </script>
 
 </body>
