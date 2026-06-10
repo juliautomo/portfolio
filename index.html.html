@@ -556,12 +556,76 @@
       <button class="filter-chip" data-filter="ai">AI Tools</button>
       <button class="filter-chip" data-filter="powerbi">Power BI</button>
       <button class="filter-chip" data-filter="looker">Looker Studio</button>
-      <button class="filter-chip" data-filter="excel">Excel</button>
+      <button class="filter-chip" data-filter="excel">Excel &amp; Sheets</button>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
 
-      <div class="project-item" data-tool="ai">
+      <div class="project-item" data-tool="looker">
+        <div class="carousel-wrap" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="leads_tracker_1.png" alt="Leads Tracker Overview" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="leads_tracker_2.png" alt="Leads Tracker Detail" loading="lazy" />
+            </div>
+          </div>
+          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
+          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
+          <div class="carousel-dots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+          </div>
+          <div class="project-img-overlay">
+            <span class="overlay-cat">Looker Studio · CRM &amp; Sales</span>
+            <p class="overlay-title">Leads Tracker</p>
+          </div>
+        </div>
+        <div class="project-item-body">
+          <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:10px;">Sales leads dashboard tracking total leads, conversion rates, and pipeline health — with breakdowns by status and location so sales teams can prioritise follow-ups at a glance.</p>
+          <div class="project-chips">
+            <span class="chip">Looker Studio</span>
+            <span class="chip">Sales Pipeline</span>
+            <span class="chip">Lead Tracking</span>
+            <span class="chip">CRM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-tool="excel">
+        <div class="carousel-wrap" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="Excel GSheet Dashboard/Google Sheet Dashboard 1.png" alt="Financial Dashboard Overview" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="Excel GSheet Dashboard/Google Sheet Dashboard 2.png" alt="Financial Dashboard Trends" loading="lazy" />
+            </div>
+          </div>
+          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
+          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
+          <div class="carousel-dots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+          </div>
+          <div class="project-img-overlay">
+            <span class="overlay-cat">Google Sheets · Financial Reporting</span>
+            <p class="overlay-title">Financial Dashboard</p>
+          </div>
+        </div>
+        <div class="project-item-body">
+          <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:10px;">Google Sheets financial dashboard with P&amp;L summary, income vs expenses trends, and key ratios like gross profit margin and operating margin — connected to live data for monthly reporting.</p>
+          <div class="project-chips">
+            <span class="chip">Google Sheets</span>
+            <span class="chip">Financial Reporting</span>
+            <span class="chip">P&amp;L</span>
+            <span class="chip">Business Finance</span>
+          </div>
+        </div>
+      </div>
+
+            <div class="project-item" data-tool="ai">
         <div class="project-img-wrap">
           <img src="innovation-analytics-demo.gif" alt="Innovation Analytics Dashboard" loading="lazy" />
           <div class="project-img-overlay">
@@ -598,23 +662,7 @@
         </div>
       </div>
 
-      <div class="project-item" data-tool="looker">
-        <div class="project-img-wrap">
-          <img src="Screenshot 2024-06-28 092455.png" alt="Board Report FY25" loading="lazy" />
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Looker Studio · Executive Reporting</span>
-            <p class="overlay-title">Board Report FY25</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:10px;">End-of-year board report with headline metrics, program outcomes, and year-on-year comparisons — designed so non-technical leadership could navigate it without guidance.</p>
-          <div class="project-chips">
-            <span class="chip">Looker Studio</span>
-            <span class="chip">Executive Reporting</span>
-            <span class="chip">Stakeholder Comms</span>
-          </div>
-        </div>
-      </div>
+
 
       <div class="project-item" data-tool="powerbi">
         <div class="project-img-wrap">
@@ -711,19 +759,33 @@
       </div>
 
       <div class="project-item" data-tool="excel">
-        <div class="project-img-wrap">
-          <img src="Excel GSheet Dashboard/Excel Dashboard Sample 5.png" alt="Performance Report 2024" loading="lazy" />
+        <div class="carousel-wrap" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="Excel GSheet Dashboard/Excel Dashboard Sample 3.png" alt="Performance Marketing CTR Dashboard" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="Excel GSheet Dashboard/Excel Dashboard Sample 2.png" alt="Performance Marketing Summary" loading="lazy" />
+            </div>
+          </div>
+          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
+          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
+          <div class="carousel-dots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+          </div>
           <div class="project-img-overlay">
-            <span class="overlay-cat">Excel · Sales Forecasting</span>
-            <p class="overlay-title">Performance Report 2024</p>
+            <span class="overlay-cat">Excel · Performance Marketing</span>
+            <p class="overlay-title">Performance Marketing Dashboard</p>
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:10px;">Sales forecast model with segment-level breakdowns and monthly target tracking — built so the team could run scenarios and present to leadership without needing a separate BI tool.</p>
+          <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:10px;">Multi-tab Excel dashboard tracking CTR, ROAS, impressions, and conversions across retail placements and brands — built for weekly performance reviews and campaign optimisation.</p>
           <div class="project-chips">
             <span class="chip">Excel</span>
-            <span class="chip">Sales Forecasting</span>
-            <span class="chip">Dynamic Charts</span>
+            <span class="chip">Performance Marketing</span>
+            <span class="chip">CTR &amp; ROAS</span>
+            <span class="chip">Retail Analytics</span>
           </div>
         </div>
       </div>
