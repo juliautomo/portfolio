@@ -100,10 +100,7 @@
 
     /* HERO */
     .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 40px;
-      align-items: center;
+      max-width: 640px;
     }
     .hero h1 {
       font-size: clamp(32px, 5vw, 52px);
@@ -168,6 +165,23 @@
     }
     .linkedin-btn:hover { background: #363b33; text-decoration: none; }
     .linkedin-btn span { font-size: 12px; font-weight: 500; }
+
+    /* HERO PROFILE */
+    .hero-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-profile img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .hero-profile-name { font-size: 13px; font-weight: 600; color: #ffffff; }
+    .hero-profile-loc { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
 
     /* BUTTONS */
     .btn {
@@ -540,8 +554,7 @@
     @media (max-width: 680px) {
       nav { padding: 0 20px; }
       .nav-links { gap: 20px; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .about-card { display: none; }
+      .hero-inner { max-width: 100%; }
       .career-item { grid-template-columns: 1fr; gap: 4px; }
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
       .projects-grid { grid-template-columns: 1fr; }
@@ -564,30 +577,24 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-inner">
-      <div>
-        <h1>Turning messy data into<br>clear decisions</h1>
-        <p class="hero-sub">
-          I help organisations make sense of their data — through dashboards, reports, and analytics tools that are clear, reliable, and easy to use.
-        </p>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-          <a class="btn btn-primary" href="mailto:julia.utomo@gmail.com">Let's Connect</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn &#8599;</a>
-        </div>
-        <div style="display:inline-flex;align-items:center;gap:8px;">
-          <span style="width:7px;height:7px;border-radius:50%;background:#CCFF00;flex-shrink:0;box-shadow:0 0 6px #CCFF00aa;"></span>
-          <span style="font-size:12px;color:rgba(255,255,255,0.42);">Open to part-time &amp; freelance roles</span>
+      <div class="hero-profile">
+        <img src="profile.jpeg" alt="Julia Utomo" />
+        <div>
+          <p class="hero-profile-name">Julia Utomo</p>
+          <p class="hero-profile-loc">Jakarta, Indonesia</p>
         </div>
       </div>
-      <div class="about-card">
-        <div class="about-card-top">
-          <img src="profile.jpeg" alt="Julia Utomo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
-          <div>
-            <p class="about-name">Julia Utomo</p>
-            <p class="about-location">Jakarta, Indonesia</p>
-          </div>
-        </div>
-        <p class="about-desc">5+ years working across consulting, logistics, and tech — helping teams make better decisions through data, clear processes, and the right tools.</p>
-
+      <h1>Turning messy data into<br>clear decisions</h1>
+      <p class="hero-sub">
+        I help organisations make sense of their data — through dashboards, reports, and analytics tools that are clear, reliable, and easy to use.
+      </p>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+        <a class="btn btn-primary" href="mailto:julia.utomo@gmail.com">Let's Connect</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn &#8599;</a>
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:8px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:#CCFF00;flex-shrink:0;"></span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.42);">Open to part-time &amp; freelance roles</span>
       </div>
     </div>
   </section>
