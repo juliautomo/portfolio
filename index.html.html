@@ -233,40 +233,43 @@
       flex-shrink: 0;
     }
 
-    /* SKILLS — numbered rows */
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      counter-reset: skill-counter;
+    /* SKILLS — icon cards grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
-    .skill-row {
-      display: flex;
-      align-items: baseline;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.09);
-      counter-increment: skill-counter;
-      gap: 0;
+    .skill-card {
+      background: #242820;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
     }
-    .skill-row:first-child { border-top: 1px solid rgba(255,255,255,0.09); }
-    .skill-row::before {
-      content: "0" counter(skill-counter);
-      font-size: 11px;
-      color: rgba(255,255,255,0.28);
+    .skill-card-icon {
       width: 36px;
-      flex-shrink: 0;
+      height: 36px;
+      color: #CCFF00;
+      margin-bottom: 14px;
     }
-    .skill-cat {
+    .skill-card-title {
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 600;
       color: #ffffff;
-      flex: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
-    .skill-tools {
-      font-size: 13px;
-      color: rgba(255,255,255,0.48);
-      max-width: 310px;
-      text-align: right;
-      line-height: 1.5;
+    .skill-card-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .skill-pill {
+      background: #2d312a;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 100px;
+      padding: 3px 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.52);
     }
 
     /* FILTER CHIPS */
@@ -539,8 +542,7 @@
       .hero-inner { grid-template-columns: 1fr; }
       .about-card { display: none; }
       .career-item { grid-template-columns: 1fr; gap: 4px; }
-      .skill-row { flex-wrap: wrap; }
-      .skill-tools { text-align: left; max-width: 100%; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
       .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -590,31 +592,90 @@
   <!-- SKILLS -->
   <section id="skills">
     <p class="section-label">Skills &amp; Tools</p>
-    <div class="skills-list">
-      <div class="skill-row">
-        <span class="skill-cat">Reporting &amp; Dashboards</span>
-        <span class="skill-tools">Power BI, Looker Studio, Tableau, Excel, Google Sheets</span>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="18" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="2" y="13" width="4" height="8" rx="1"/>
+        </svg>
+        <div class="skill-card-title">Reporting &amp; Dashboards</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Power BI</span>
+          <span class="skill-pill">Looker Studio</span>
+          <span class="skill-pill">Tableau</span>
+          <span class="skill-pill">Excel</span>
+          <span class="skill-pill">Google Sheets</span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">AI &amp; Automation</span>
-        <span class="skill-tools">Claude AI, ChatGPT, Lovable, Google Apps Script, process automation</span>
+
+      <div class="skill-card">
+        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01M12 9v6M9 12h6"/>
+        </svg>
+        <div class="skill-card-title">AI &amp; Automation</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Claude AI</span>
+          <span class="skill-pill">ChatGPT</span>
+          <span class="skill-pill">Lovable</span>
+          <span class="skill-pill">Apps Script</span>
+          <span class="skill-pill">Process automation</span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">Analytics &amp; Insights</span>
-        <span class="skill-tools">Google Analytics, supply chain analytics, KPI design, financial analysis</span>
+
+      <div class="skill-card">
+        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12l4-4 4 4 4-6 4 3"/><circle cx="19" cy="9" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        <div class="skill-card-title">Analytics &amp; Insights</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Google Analytics</span>
+          <span class="skill-pill">Supply chain analytics</span>
+          <span class="skill-pill">KPI design</span>
+          <span class="skill-pill">Financial analysis</span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">Business Analysis</span>
-        <span class="skill-tools">Requirements gathering, stakeholder mapping, business case writing, gap analysis, process mapping, user story definition</span>
+
+      <div class="skill-card">
+        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12h6M9 16h6M9 8h2"/><path d="M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/>
+        </svg>
+        <div class="skill-card-title">Business Analysis</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Requirements gathering</span>
+          <span class="skill-pill">Stakeholder mapping</span>
+          <span class="skill-pill">Gap analysis</span>
+          <span class="skill-pill">Process mapping</span>
+          <span class="skill-pill">User story definition</span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">Web Development</span>
-        <span class="skill-tools">HTML, CSS, JavaScript, React, Vercel, AI-assisted development</span>
+
+      <div class="skill-card">
+        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+        <div class="skill-card-title">Web Development</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">HTML &amp; CSS</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Vercel</span>
+          <span class="skill-pill">AI-assisted dev</span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">Process Optimisation</span>
-        <span class="skill-tools">Workflow automation, process simplification, SOP development, efficiency analysis, reporting consolidation, tool integration</span>
+
+      <div class="skill-card">
+        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/>
+        </svg>
+        <div class="skill-card-title">Process Optimisation</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Workflow automation</span>
+          <span class="skill-pill">SOP development</span>
+          <span class="skill-pill">Efficiency analysis</span>
+          <span class="skill-pill">Tool integration</span>
+        </div>
       </div>
+
     </div>
   </section>
 
