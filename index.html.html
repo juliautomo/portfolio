@@ -154,21 +154,33 @@
       text-transform: uppercase; color: var(--text-mute); margin-bottom: 40px;
     }
 
-    /* ── SKILLS ── */
+    /* ── SKILLS / SERVICES ── */
     .skills-wrap { max-width: 888px; margin: 0 auto; padding: 64px 24px; }
-    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
     .skill-card {
       background: var(--bg-soft); border: 1px solid var(--line);
-      border-radius: 16px; padding: 24px; transition: border-color .15s;
+      border-radius: 16px; padding: 28px 24px; transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column; gap: 0;
     }
-    .skill-card:hover { border-color: #4a4a3f; }
-    .skill-card-icon { width: 36px; height: 36px; color: var(--accent); margin-bottom: 14px; }
-    .skill-card-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 12px; letter-spacing: -0.01em; }
-    .skill-card-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-pill {
-      background: var(--bg); border: 1px solid var(--line); border-radius: 999px;
-      padding: 3px 10px; font-size: 12px; color: var(--text-dim);
+    .skill-card:hover { border-color: rgba(215,255,63,.35); transform: translateY(-2px); }
+    .skill-card-title {
+      font-size: 15px; font-weight: 700; color: var(--text);
+      margin-bottom: 10px; letter-spacing: -0.01em;
     }
+    .skill-card-desc {
+      font-size: 13px; color: var(--text-dim); line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .skill-card-checks { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+    .skill-check {
+      font-size: 12.5px; color: var(--text-dim);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .skill-check::before {
+      content: "✓"; color: var(--accent); font-weight: 700; font-size: 12px; flex-shrink: 0;
+    }
+    @media (max-width: 760px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; } }
 
     /* ── FILTER CHIPS ── */
     .filter-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
@@ -456,68 +468,74 @@
     <div class="skills-grid">
 
       <div class="skill-card">
-        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="18" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="2" y="13" width="4" height="8" rx="1"/>
-        </svg>
-        <div class="skill-card-title">Reporting &amp; Dashboards</div>
-        <div class="skill-card-pills">
-          <span class="skill-pill">Power BI</span><span class="skill-pill">Looker Studio</span>
-          <span class="skill-pill">Tableau</span><span class="skill-pill">Excel</span><span class="skill-pill">Google Sheets</span>
+        <div class="skill-card-title">Business Intelligence</div>
+        <div class="skill-card-desc">Turn scattered business data into executive dashboards and actionable insights.</div>
+        <div class="skill-card-checks">
+          <span class="skill-check">Executive dashboards</span>
+          <span class="skill-check">KPI reporting</span>
+          <span class="skill-check">Power BI</span>
+          <span class="skill-check">Looker Studio</span>
+          <span class="skill-check">Excel automation</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h.01M15 9h.01M9 15h.01M15 15h.01M12 9v6M9 12h6"/>
-        </svg>
-        <div class="skill-card-title">AI &amp; Automation</div>
-        <div class="skill-card-pills">
-          <span class="skill-pill">Claude AI</span><span class="skill-pill">ChatGPT</span>
-          <span class="skill-pill">Lovable</span><span class="skill-pill">Apps Script</span><span class="skill-pill">Process automation</span>
+        <div class="skill-card-title">AI Business Solutions</div>
+        <div class="skill-card-desc">Build AI-powered assistants and internal tools that automate repetitive work.</div>
+        <div class="skill-card-checks">
+          <span class="skill-check">AI Analyst</span>
+          <span class="skill-check">Claude AI</span>
+          <span class="skill-check">ChatGPT</span>
+          <span class="skill-check">AI Agents</span>
+          <span class="skill-check">Workflow automation</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12l4-4 4 4 4-6 4 3"/><circle cx="19" cy="9" r="1" fill="currentColor" stroke="none"/>
-        </svg>
-        <div class="skill-card-title">Analytics &amp; Insights</div>
-        <div class="skill-card-pills">
-          <span class="skill-pill">Google Analytics</span><span class="skill-pill">Supply chain analytics</span>
-          <span class="skill-pill">KPI design</span><span class="skill-pill">Financial analysis</span>
+        <div class="skill-card-title">Data Analytics</div>
+        <div class="skill-card-desc">Analyse trends, identify opportunities, and uncover actionable business insights.</div>
+        <div class="skill-card-checks">
+          <span class="skill-check">Sales analysis</span>
+          <span class="skill-check">Financial reporting</span>
+          <span class="skill-check">Inventory analytics</span>
+          <span class="skill-check">Marketing analytics</span>
+          <span class="skill-check">Forecasting</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 12h6M9 16h6M9 8h2"/><path d="M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/>
-        </svg>
-        <div class="skill-card-title">Business Analysis</div>
-        <div class="skill-card-pills">
-          <span class="skill-pill">Requirements gathering</span><span class="skill-pill">Stakeholder mapping</span>
-          <span class="skill-pill">Gap analysis</span><span class="skill-pill">Process mapping</span><span class="skill-pill">User story definition</span>
+        <div class="skill-card-title">Process Improvement</div>
+        <div class="skill-card-desc">Streamline workflows and eliminate manual processes using automation.</div>
+        <div class="skill-card-checks">
+          <span class="skill-check">Business process mapping</span>
+          <span class="skill-check">SOP optimisation</span>
+          <span class="skill-check">Apps Script</span>
+          <span class="skill-check">Tool integrations</span>
+          <span class="skill-check">Operational efficiency</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-        </svg>
-        <div class="skill-card-title">Web Development</div>
-        <div class="skill-card-pills">
-          <span class="skill-pill">HTML &amp; CSS</span><span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">React</span><span class="skill-pill">Vercel</span><span class="skill-pill">AI-assisted dev</span>
+        <div class="skill-card-title">Custom Internal Tools</div>
+        <div class="skill-card-desc">Build tailored web applications to support your team&rsquo;s daily operations.</div>
+        <div class="skill-card-checks">
+          <span class="skill-check">Internal portals</span>
+          <span class="skill-check">Dashboards</span>
+          <span class="skill-check">React</span>
+          <span class="skill-check">Lovable</span>
+          <span class="skill-check">Vercel</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/>
-        </svg>
-        <div class="skill-card-title">Process Optimisation</div>
-        <div class="skill-card-pills">
-          <span class="skill-pill">Workflow automation</span><span class="skill-pill">SOP development</span>
-          <span class="skill-pill">Efficiency analysis</span><span class="skill-pill">Tool integration</span>
+        <div class="skill-card-title">Product &amp; Business Strategy</div>
+        <div class="skill-card-desc">Translate business problems into practical digital solutions.</div>
+        <div class="skill-card-checks">
+          <span class="skill-check">Requirements gathering</span>
+          <span class="skill-check">Product strategy</span>
+          <span class="skill-check">Stakeholder workshops</span>
+          <span class="skill-check">User stories</span>
+          <span class="skill-check">Gap analysis</span>
         </div>
       </div>
 
