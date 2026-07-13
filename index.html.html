@@ -182,6 +182,17 @@
     @media (max-width: 760px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; } }
 
+
+    /* ── PROBLEM / SOLUTION / RESULT ── */
+    .psr { display: flex; flex-direction: column; gap: 5px; margin: 10px 0 10px; }
+    .psr-row { display: flex; align-items: baseline; gap: 7px; font-size: 12px; line-height: 1.45; }
+    .psr-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--text-mute); flex-shrink: 0; width: 52px;
+    }
+    .psr-arrow { color: var(--accent); flex-shrink: 0; font-size: 11px; }
+    .psr-text { color: var(--text-dim); }
+
     /* ── FILTER CHIPS ── */
     .filter-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
     .filter-chip {
@@ -570,7 +581,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Full-stack analytics app built with AI &mdash; multi-page dashboard with Sankey diagrams, use-gap analysis, and AI-generated insights, all filterable by center, country, and funding source.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Full-stack analytics app built with AI &mdash; multi-page dashboard with Sankey diagrams, use-gap analysis, and AI-generated insights, all filterable by center, country, and funding source.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Innovation data scattered across sources with no unified view</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI-powered full-stack app with Sankey diagrams, use-gap analysis, and AI insights</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Multi-page dashboard with real-time filtering by center, country, and funding source</span></div>
+          </div>
           <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Lovable</span><span class="chip">React</span><span class="chip">Data Visualisation</span></div>
         </div>
       </div>
@@ -585,7 +601,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Upload Excel data, get an automated interactive dashboard in return &mdash; built with a chatbot interface so non-technical users can explore data and generate insights without any setup.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Upload Excel data, get an automated interactive dashboard in return &mdash; built with a chatbot interface so non-technical users can explore data and generate insights without any setup.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Non-technical users couldn&rsquo;t explore data without relying on an analyst</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI chatbot that turns uploaded Excel files into interactive dashboards instantly</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Self-serve analytics for any user &mdash; no setup, no technical skills required</span></div>
+          </div>
           <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Claude AI</span><span class="chip">Data Automation</span><span class="chip">Excel Integration</span></div>
         </div>
       </div>
@@ -600,7 +621,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">AI agent handling end-to-end marketing workflows &mdash; content generation, campaign planning, and scheduling. Built to help small teams move faster without a dedicated marketing hire.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">AI agent handling end-to-end marketing workflows &mdash; content generation, campaign planning, and scheduling. Built to help small teams move faster without a dedicated marketing hire.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Small team spending hours manually on content creation and campaign planning</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI agent to automate content generation, scheduling, and campaign workflows end-to-end</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Full marketing execution without a dedicated hire &mdash; faster output, less manual work</span></div>
+          </div>
           <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Claude AI</span><span class="chip">Automation</span><span class="chip">Content Generation</span></div>
         </div>
       </div>
@@ -616,7 +642,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">End-to-end lead generation tool &mdash; finds target companies, discovers contact emails, drafts personalised outreach, and sends directly via Gmail. Built to turn hours of manual prospecting into minutes.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">End-to-end lead generation tool &mdash; finds target companies, discovers contact emails, drafts personalised outreach, and sends directly via Gmail. Built to turn hours of manual prospecting into minutes.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Sales team spending hours manually prospecting and writing personalised outreach</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI tool to find companies, discover emails, draft messages, and send via Gmail</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Hours of manual prospecting reduced to minutes with zero copy-paste required</span></div>
+          </div>
           <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Lead Generation</span><span class="chip">Gmail Integration</span><span class="chip">Automation</span></div>
         </div>
       </div>
@@ -630,7 +661,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Skills-based e-learning platform with a multi-page layout &mdash; course catalog, progress tracking, and assessment modules built for learners who want a clear path from skill gaps to outcomes.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Skills-based e-learning platform with a multi-page layout &mdash; course catalog, progress tracking, and assessment modules built for learners who want a clear path from skill gaps to outcomes.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Learners had no structured path from identifying skill gaps to achieving outcomes</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built multi-page platform with course catalog, progress tracking, and assessments</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Clear learning journey from enrollment to skill achievement in one place</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Web Dev</span><span class="chip">E-Learning</span><span class="chip">UI Design</span></div>
         </div>
       </div>
@@ -645,7 +681,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Sales leads dashboard tracking total leads, conversion rates, and pipeline health &mdash; with breakdowns by status and location so sales teams can prioritise follow-ups at a glance.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales leads dashboard tracking total leads, conversion rates, and pipeline health &mdash; with breakdowns by status and location so sales teams can prioritise follow-ups at a glance.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Sales team had no visibility into pipeline health or where leads were dropping off</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Looker Studio dashboard tracking leads, conversion rates, and status by location</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Sales teams can instantly prioritise follow-ups without digging through spreadsheets</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Sales Pipeline</span><span class="chip">Lead Tracking</span><span class="chip">CRM</span></div>
         </div>
       </div>
@@ -669,7 +710,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Google Sheets financial dashboard with P&amp;L summary, income vs expenses trends, and key ratios like gross profit margin and operating margin &mdash; connected to live data for monthly reporting.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Google Sheets financial dashboard with P&amp;L summary, income vs expenses trends, and key ratios like gross profit margin and operating margin &mdash; connected to live data for monthly reporting.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Finance team manually compiling P&amp;L reports from multiple spreadsheets each month</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built connected Google Sheets dashboard with live P&amp;L, expense trends, and key ratios</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Monthly reporting automated &mdash; always current, no manual data compilation</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Google Sheets</span><span class="chip">Financial Reporting</span><span class="chip">P&amp;L</span><span class="chip">Business Finance</span></div>
         </div>
       </div>
@@ -684,7 +730,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs &mdash; built to give an ops team a daily snapshot without digging through raw data.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs &mdash; built to give an ops team a daily snapshot without digging through raw data.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Ops team spending hours pulling raw data daily to track warehouse performance</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Power BI dashboard with inbound/outbound flow, inventory turnover, and KPIs</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Daily snapshot available in one click &mdash; no more manual data pulls</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Power BI</span><span class="chip">Supply Chain</span><span class="chip">Operations</span></div>
         </div>
       </div>
@@ -699,7 +750,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Sales and customer analysis dashboard tracking monthly sales, category breakdown, top customers, and rep performance &mdash; built in Power BI with interactive filters.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales and customer analysis dashboard tracking monthly sales, category breakdown, top customers, and rep performance &mdash; built in Power BI with interactive filters.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Leadership had no clear view of sales trends, top customers, or rep performance</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Power BI dashboard with interactive filters across categories, customers, and reps</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Monthly sales reviews reduced from hours of prep to a single dashboard</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Power BI</span><span class="chip">Sales Analytics</span><span class="chip">Customer Analysis</span></div>
         </div>
       </div>
@@ -714,7 +770,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Sales performance dashboard for a retail client &mdash; tracks revenue by channel, region, and product category, connected live to data sources for an always up-to-date view.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales performance dashboard for a retail client &mdash; tracks revenue by channel, region, and product category, connected live to data sources for an always up-to-date view.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Retail client&rsquo;s sales data was siloed across channels and regions with no unified view</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Looker Studio dashboard connected live to data sources across all channels</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Always up-to-date revenue view by channel, region, and product &mdash; no refresh needed</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Retail</span><span class="chip">Live Data</span></div>
         </div>
       </div>
@@ -729,7 +790,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Live digital analytics dashboard connecting GA data to Looker Studio &mdash; gives marketing teams a real-time view of traffic, engagement, and conversion without logging into GA.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Live digital analytics dashboard connecting GA data to Looker Studio &mdash; gives marketing teams a real-time view of traffic, engagement, and conversion without logging into GA.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Marketing team had to log into GA separately and export data for every report</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Connected GA data to Looker Studio for a centralised, always-live shareable dashboard</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Real-time traffic, engagement, and conversion view &mdash; no GA login required</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Google Analytics</span><span class="chip">Digital Marketing</span></div>
         </div>
       </div>
@@ -753,7 +819,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">End-to-end marketing dashboard covering site traffic, audience behaviour, and Google Ads performance &mdash; giving teams a single view to track spend, conversions, and channel effectiveness.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">End-to-end marketing dashboard covering site traffic, audience behaviour, and Google Ads performance &mdash; giving teams a single view to track spend, conversions, and channel effectiveness.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Marketing spend and performance data scattered across GA and multiple ad platforms</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built unified Looker Studio dashboard covering traffic, audience, and ad performance</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Single view to track spend, conversions, and channel effectiveness in real time</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Google Analytics</span><span class="chip">Google Ads</span><span class="chip">Digital Marketing</span></div>
         </div>
       </div>
@@ -777,7 +848,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Multi-tab Excel dashboard tracking CTR, ROAS, impressions, and conversions across retail placements and brands &mdash; built for weekly performance reviews and campaign optimisation.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Multi-tab Excel dashboard tracking CTR, ROAS, impressions, and conversions across retail placements and brands &mdash; built for weekly performance reviews and campaign optimisation.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Campaign performance tracked in separate files with no consolidated weekly view</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built multi-tab Excel dashboard consolidating CTR, ROAS, impressions, and conversions</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Weekly reviews ready in minutes &mdash; clear comparison across brands and placements</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Excel</span><span class="chip">Performance Marketing</span><span class="chip">CTR &amp; ROAS</span><span class="chip">Retail Analytics</span></div>
         </div>
       </div>
@@ -792,7 +868,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Indonesian e-learning platform with a clean, conversion-focused landing page &mdash; course listings, pricing tiers, and a streamlined enrollment flow built to turn visitors into paying students.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Indonesian e-learning platform with a clean, conversion-focused landing page &mdash; course listings, pricing tiers, and a streamlined enrollment flow built to turn visitors into paying students.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">E-learning provider needed a professional site to convert visitors into paying students</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built conversion-focused landing page with course listings, pricing tiers, and enrollment flow</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Modern, credible platform designed to drive sign-ups from first visit</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Web Dev</span><span class="chip">E-Learning</span><span class="chip">UI Design</span></div>
         </div>
       </div>
@@ -807,7 +888,12 @@
           </div>
         </div>
         <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px;">Data literacy digital platform with a structured course marketplace, checkout flow, and user dashboard &mdash; designed to make data skills accessible with a clean, modern interface.</p>
+          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Data literacy digital platform with a structured course marketplace, checkout flow, and user dashboard &mdash; designed to make data skills accessible with a clean, modern interface.</p>
+          <div class="psr">
+            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Data education brand needed an online marketplace to sell courses at scale</span></div>
+            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built digital platform with course marketplace, checkout flow, and user dashboard</span></div>
+            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Fully operational platform with clean interface &mdash; ready to scale from day one</span></div>
+          </div>
           <div class="project-chips"><span class="chip">Web Dev</span><span class="chip">Digital Platform</span><span class="chip">Marketplace</span></div>
         </div>
       </div>
