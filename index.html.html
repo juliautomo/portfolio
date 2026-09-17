@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Julia Utomo — Business Analyst | BI &amp; AI Automation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Julia Utomo — Business Analyst | BI &amp; AI Automation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -212,24 +213,26 @@
       transition: border-color .2s, transform .2s;
     }
     .project-item:hover { border-color: rgba(215,255,63,.35); transform: translateY(-2px); }
+    .project-item.featured-tile { grid-column: span 2; }
+    .project-item.featured-tile .project-img-wrap,
+    .project-item.featured-tile .carousel-wrap { aspect-ratio: 21/8; }
 
     .project-img-wrap {
       position: relative; width: 100%; aspect-ratio: 16/9;
       overflow: hidden; background: #111110;
     }
     .project-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .project-img-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,.78) 100%);
-      display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px;
-    }
-    .overlay-cat {
-      font-size: 10px; font-weight: 600; letter-spacing: .07em;
-      text-transform: uppercase; color: rgba(243,242,236,.55); margin-bottom: 3px;
-    }
-    .overlay-title { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.3; }
 
-    .project-item-body { padding: 12px 16px 14px; border-top: 1px solid var(--line); }
+    .cat-badge {
+      position: absolute; top: 12px; left: 12px; z-index: 3;
+      background: var(--text); color: var(--bg);
+      font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      padding: 5px 10px; border-radius: 6px;
+    }
+
+    .project-item-body { padding: 14px 16px 16px; border-top: 1px solid var(--line); }
+    .project-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+    .card-hidden { display: none; }
     .project-chips { display: flex; flex-wrap: wrap; gap: 5px; }
     .chip {
       background: var(--bg); border: 1px solid var(--line); border-radius: 999px;
@@ -329,6 +332,9 @@
       .sec-div { margin: 0 24px; }
       .skills-grid { grid-template-columns: repeat(2,1fr); }
       .projects-grid { grid-template-columns: 1fr; }
+      .project-item.featured-tile { grid-column: span 1; }
+      .project-item.featured-tile .project-img-wrap,
+      .project-item.featured-tile .carousel-wrap { aspect-ratio: 16/9; }
       .career-item { grid-template-columns: 1fr; gap: 4px; }
       #contact { padding: 64px 24px; }
       #contact .contact-inner { grid-template-columns: 1fr; }
@@ -442,662 +448,561 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <span class="nav-name">Julia Utomo</span>
-    <ul class="nav-links">
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#career">Career</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero" id="home">
-    <div>
-      <div class="who">
-        <img src="profile.jpeg" alt="Julia Utomo" class="who-avatar" />
-        <div>
-          <div class="who-name">Julia Utomo</div>
-          <div class="who-title">Business Analyst | BI &amp; AI Automation</div>
-          <div class="who-loc">Jakarta, Indonesia</div>
-        </div>
-      </div>
-
-      <h1>Turning complexity<br>into <span>clear decisions</span></h1>
-
-      <p class="hero-sub">
-        I help organisations cut through complexity &mdash; with data, streamlined processes, and practical solutions.
+<!-- NAV -->
+<nav>
+<span class="nav-name">Julia Utomo</span>
+<ul class="nav-links">
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#career">Career</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<!-- HERO -->
+<div class="hero" id="home">
+<div>
+<div class="who">
+<img alt="Julia Utomo" class="who-avatar" src="profile.jpeg"/>
+<div>
+<div class="who-name">Julia Utomo</div>
+<div class="who-title">Business Analyst | BI &amp; AI Automation</div>
+<div class="who-loc">Jakarta, Indonesia</div>
+</div>
+</div>
+<h1>Turning complexity<br/>into <span>clear decisions</span></h1>
+<p class="hero-sub">
+        I help organisations cut through complexity — with data, streamlined processes, and practical solutions.
       </p>
+<div class="cta-row">
+<a class="btn btn-primary" href="mailto:julia.utomo@gmail.com">Let’s Connect</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn ↗</a>
+</div>
+<div class="avail-badge">
+<span class="avail-dot"></span>
+<span>Open to <strong>project-based, freelance, part-time, full-time</strong> &amp; <strong>remote or relocation</strong></span>
+</div>
+</div>
+<!-- Signature visual -->
+<div class="hero-visual">
+<svg preserveaspectratio="xMidYMid slice" viewbox="0 0 600 540" xmlns="http://www.w3.org/2000/svg">
+<!-- dot grid -->
+<g fill="#2c2c25">
+<circle cx="40" cy="40" r="2"></circle><circle cx="90" cy="40" r="2"></circle><circle cx="140" cy="40" r="2"></circle>
+<circle cx="40" cy="90" r="2"></circle><circle cx="90" cy="90" r="2"></circle><circle cx="140" cy="90" r="2"></circle>
+<circle cx="40" cy="140" r="2"></circle><circle cx="90" cy="140" r="2"></circle><circle cx="140" cy="140" r="2"></circle>
+<circle cx="460" cy="440" r="2"></circle><circle cx="510" cy="440" r="2"></circle><circle cx="560" cy="440" r="2"></circle>
+<circle cx="460" cy="490" r="2"></circle><circle cx="510" cy="490" r="2"></circle><circle cx="560" cy="490" r="2"></circle>
+</g>
+<!-- chaotic bars -->
+<g opacity="0.85">
+<rect fill="#454539" height="92" rx="4" transform="rotate(-9 68 470)" width="20" x="58" y="378"></rect>
+<rect fill="#3a3a30" height="150" rx="4" transform="rotate(7 103 450)" width="18" x="94" y="300"></rect>
+<rect fill="#4a4a40" height="62" rx="4" transform="rotate(-5 141 478)" width="22" x="130" y="416"></rect>
+<rect fill="#3e3e35" height="172" rx="4" transform="rotate(11 174 434)" width="16" x="166" y="262"></rect>
+<rect fill="#454539" height="108" rx="4" transform="rotate(-13 208 466)" width="20" x="198" y="358"></rect>
+</g>
+<!-- divider line -->
+<line stroke="#34342c" stroke-dasharray="4 6" stroke-width="1" x1="270" x2="270" y1="80" y2="470"></line>
+<!-- baseline -->
+<line stroke="#34342c" stroke-width="1" x1="295" x2="560" y1="470" y2="470"></line>
+<!-- clean animated bars -->
+<g>
+<rect class="bar-anim" fill="#d7ff3f" height="60" opacity="0.45" rx="6" width="34" x="305" y="410"></rect>
+<rect class="bar-anim" fill="#d7ff3f" height="110" opacity="0.60" rx="6" width="34" x="355" y="360"></rect>
+<rect class="bar-anim" fill="#d7ff3f" height="160" opacity="0.78" rx="6" width="34" x="405" y="310"></rect>
+<rect class="bar-anim" fill="#d7ff3f" height="210" opacity="0.92" rx="6" width="34" x="455" y="260"></rect>
+<rect class="bar-anim" fill="#d7ff3f" height="260" rx="6" width="34" x="505" y="210"></rect>
+</g>
+<!-- endpoint marker -->
+<circle cx="522" cy="198" fill="#d7ff3f" r="6"></circle>
+<circle cx="522" cy="198" fill="none" opacity="0.4" r="12" stroke="#d7ff3f" stroke-width="1.5"></circle>
+</svg>
+</div>
+</div>
+<hr class="sec-div"/>
+<!-- SKILLS -->
+<div class="skills-wrap" id="skills">
+<p class="section-label">Services | Skills &amp; Tools</p>
+<div class="skills-grid">
+<div class="skill-card">
+<div class="skill-card-title">Business Intelligence</div>
+<div class="skill-card-desc">Turn scattered business data into executive dashboards and actionable insights.</div>
+<div class="skill-card-checks">
+<span class="skill-check">Executive dashboards</span>
+<span class="skill-check">KPI reporting</span>
+<span class="skill-check">Power BI</span>
+<span class="skill-check">Looker Studio</span>
+<span class="skill-check">Excel automation</span>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-card-title">AI Business Solutions</div>
+<div class="skill-card-desc">Build AI-powered assistants and internal tools that automate repetitive work.</div>
+<div class="skill-card-checks">
+<span class="skill-check">AI Analyst</span>
+<span class="skill-check">Claude AI</span>
+<span class="skill-check">ChatGPT</span>
+<span class="skill-check">AI Agents</span>
+<span class="skill-check">Workflow automation</span>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-card-title">Data Analytics</div>
+<div class="skill-card-desc">Analyse trends, identify opportunities, and uncover actionable business insights.</div>
+<div class="skill-card-checks">
+<span class="skill-check">Sales analysis</span>
+<span class="skill-check">Financial reporting</span>
+<span class="skill-check">Inventory analytics</span>
+<span class="skill-check">Marketing analytics</span>
+<span class="skill-check">Forecasting</span>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-card-title">Process Improvement</div>
+<div class="skill-card-desc">Streamline workflows and eliminate manual processes using automation.</div>
+<div class="skill-card-checks">
+<span class="skill-check">Business process mapping</span>
+<span class="skill-check">SOP optimisation</span>
+<span class="skill-check">Apps Script</span>
+<span class="skill-check">Tool integrations</span>
+<span class="skill-check">Operational efficiency</span>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-card-title">Custom Internal Tools</div>
+<div class="skill-card-desc">Build tailored web applications to support your team’s daily operations.</div>
+<div class="skill-card-checks">
+<span class="skill-check">Internal portals</span>
+<span class="skill-check">Dashboards</span>
+<span class="skill-check">Web Applications</span>
+<span class="skill-check">Lovable</span>
+<span class="skill-check">Vercel</span>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-card-title">Product &amp; Business Strategy</div>
+<div class="skill-card-desc">Translate business problems into practical digital solutions.</div>
+<div class="skill-card-checks">
+<span class="skill-check">Requirements gathering</span>
+<span class="skill-check">Product strategy</span>
+<span class="skill-check">Market research</span>
+<span class="skill-check">User stories</span>
+<span class="skill-check">Gap analysis</span>
+</div>
+</div>
+</div>
+</div>
+<hr class="sec-div"/>
+<!-- PROJECTS -->
+<div class="projects-wrap" id="projects">
+<p class="section-label" style="margin-bottom:10px;">Sample Projects</p>
+<p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;line-height:1.6;">Click any tile for a closer look — full problem, solution &amp; result breakdown.</p>
+<p style="font-size:11px;color:var(--text-mute);margin-top:4px;margin-bottom:16px;line-height:1.6;">* All dashboards use dummy data or have been redacted for client confidentiality.</p>
+<div class="filter-chips">
+<button class="filter-chip active" data-filter="all">All</button>
+<button class="filter-chip" data-filter="ai">AI Tools</button>
+<button class="filter-chip" data-filter="webdev">Website Dev</button>
+<button class="filter-chip" data-filter="powerbi">Power BI</button>
+<button class="filter-chip" data-filter="looker">Looker Studio</button>
+<button class="filter-chip" data-filter="excel">Excel &amp; Sheets</button>
+</div>
+<div class="projects-grid" id="projectsGrid">
+<div class="project-item featured-tile" data-tool="ai">
+<div class="project-img-wrap"><span class="cat-badge">Featured · AI App</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="lovable-short.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:julia.utomo@gmail.com">Let&rsquo;s Connect</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn &#8599;</a>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Innovation Analytics Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Full-stack analytics app built with AI — multi-page dashboard with Sankey diagrams, use-gap analysis, and AI-generated insights, all filterable by center, country, and funding source.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Innovation data scattered across sources with no unified view</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI-powered full-stack app with Sankey diagrams, use-gap analysis, and AI insights</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Multi-page dashboard with real-time filtering by center, country, and funding source</span></div>
+</div><div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Lovable</span><span class="chip">React</span><span class="chip">Data Visualisation</span></div></div>
 
-      <div class="avail-badge">
-        <span class="avail-dot"></span>
-        <span>Open to <strong>project-based, freelance, part-time, full-time</strong> &amp; <strong>remote or relocation</strong></span>
-      </div>
-    </div>
+</div>
+</div>
+<div class="project-item" data-tool="ai">
+<div class="project-img-wrap"><span class="cat-badge">AI Tool</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="bizanalyst-demo.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-    <!-- Signature visual -->
-    <div class="hero-visual">
-      <svg viewBox="0 0 600 540" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <!-- dot grid -->
-        <g fill="#2c2c25">
-          <circle cx="40" cy="40" r="2"/><circle cx="90" cy="40" r="2"/><circle cx="140" cy="40" r="2"/>
-          <circle cx="40" cy="90" r="2"/><circle cx="90" cy="90" r="2"/><circle cx="140" cy="90" r="2"/>
-          <circle cx="40" cy="140" r="2"/><circle cx="90" cy="140" r="2"/><circle cx="140" cy="140" r="2"/>
-          <circle cx="460" cy="440" r="2"/><circle cx="510" cy="440" r="2"/><circle cx="560" cy="440" r="2"/>
-          <circle cx="460" cy="490" r="2"/><circle cx="510" cy="490" r="2"/><circle cx="560" cy="490" r="2"/>
-        </g>
-        <!-- chaotic bars -->
-        <g opacity="0.85">
-          <rect x="58"  y="378" width="20" height="92"  rx="4" fill="#454539" transform="rotate(-9 68 470)"/>
-          <rect x="94"  y="300" width="18" height="150" rx="4" fill="#3a3a30" transform="rotate(7 103 450)"/>
-          <rect x="130" y="416" width="22" height="62"  rx="4" fill="#4a4a40" transform="rotate(-5 141 478)"/>
-          <rect x="166" y="262" width="16" height="172" rx="4" fill="#3e3e35" transform="rotate(11 174 434)"/>
-          <rect x="198" y="358" width="20" height="108" rx="4" fill="#454539" transform="rotate(-13 208 466)"/>
-        </g>
-        <!-- divider line -->
-        <line x1="270" y1="80" x2="270" y2="470" stroke="#34342c" stroke-width="1" stroke-dasharray="4 6"/>
-        <!-- baseline -->
-        <line x1="295" y1="470" x2="560" y2="470" stroke="#34342c" stroke-width="1"/>
-        <!-- clean animated bars -->
-        <g>
-          <rect class="bar-anim" x="305" y="410" width="34" height="60"  rx="6" fill="#d7ff3f" opacity="0.45"/>
-          <rect class="bar-anim" x="355" y="360" width="34" height="110" rx="6" fill="#d7ff3f" opacity="0.60"/>
-          <rect class="bar-anim" x="405" y="310" width="34" height="160" rx="6" fill="#d7ff3f" opacity="0.78"/>
-          <rect class="bar-anim" x="455" y="260" width="34" height="210" rx="6" fill="#d7ff3f" opacity="0.92"/>
-          <rect class="bar-anim" x="505" y="210" width="34" height="260" rx="6" fill="#d7ff3f"/>
-        </g>
-        <!-- endpoint marker -->
-        <circle cx="522" cy="198" r="6" fill="#d7ff3f"/>
-        <circle cx="522" cy="198" r="12" fill="none" stroke="#d7ff3f" stroke-width="1.5" opacity="0.4"/>
-      </svg>
+</div>
+<div class="project-item-body"><h3 class="project-title">BizAnalyst AI Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Upload Excel or connect Google Sheets, get an automated interactive dashboard in return — built with a chatbot interface so non-technical users can explore data and generate insights without any setup.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Non-technical users couldn’t explore data without relying on an analyst</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI chatbot that turns uploaded Excel files into interactive dashboards instantly</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Self-serve analytics for any user — no setup, no technical skills required</span></div>
+</div><div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Claude AI</span><span class="chip">Data Automation</span><span class="chip">Excel Integration</span></div></div>
 
-    </div>
-  </div>
+</div>
+</div>
+<div class="project-item" data-tool="ai">
+<div class="project-img-wrap"><span class="cat-badge">AI Tool</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="ai-marketing-demo.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-  <hr class="sec-div" />
+</div>
+<div class="project-item-body"><h3 class="project-title">Marketing Agent</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">AI agent handling end-to-end marketing workflows — content generation, campaign planning, and scheduling. Built to help small teams move faster without a dedicated marketing hire.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Small team spending hours manually on content creation and campaign planning</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI agent to automate content generation, scheduling, and campaign workflows end-to-end</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Full marketing execution without a dedicated hire — faster output, less manual work</span></div>
+</div><div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Claude AI</span><span class="chip">Automation</span><span class="chip">Content Generation</span></div></div>
 
-  <!-- SKILLS -->
-  <div class="skills-wrap" id="skills">
-    <p class="section-label">Services | Skills &amp; Tools</p>
-    <div class="skills-grid">
+</div>
+</div>
+<div class="project-item" data-tool="ai">
+<div class="project-img-wrap"><span class="cat-badge">AI Tool</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="simplifyingleads.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-      <div class="skill-card">
-        <div class="skill-card-title">Business Intelligence</div>
-        <div class="skill-card-desc">Turn scattered business data into executive dashboards and actionable insights.</div>
-        <div class="skill-card-checks">
-          <span class="skill-check">Executive dashboards</span>
-          <span class="skill-check">KPI reporting</span>
-          <span class="skill-check">Power BI</span>
-          <span class="skill-check">Looker Studio</span>
-          <span class="skill-check">Excel automation</span>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">AI Lead Generator</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">End-to-end lead generation tool — finds target companies, discovers contact emails, drafts personalised outreach, and sends directly via Gmail. Built to turn hours of manual prospecting into minutes.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Sales team spending hours manually prospecting and writing personalised outreach</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI tool to find companies, discover emails, draft messages, and send via Gmail</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Hours of manual prospecting reduced to minutes with zero copy-paste required</span></div>
+</div><div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Lead Generation</span><span class="chip">Gmail Integration</span><span class="chip">Automation</span></div></div>
 
-      <div class="skill-card">
-        <div class="skill-card-title">AI Business Solutions</div>
-        <div class="skill-card-desc">Build AI-powered assistants and internal tools that automate repetitive work.</div>
-        <div class="skill-card-checks">
-          <span class="skill-check">AI Analyst</span>
-          <span class="skill-check">Claude AI</span>
-          <span class="skill-check">ChatGPT</span>
-          <span class="skill-check">AI Agents</span>
-          <span class="skill-check">Workflow automation</span>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item featured-tile" data-tool="webdev">
+<div class="project-img-wrap"><span class="cat-badge">Web Development · Education</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="website-skillpath.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-      <div class="skill-card">
-        <div class="skill-card-title">Data Analytics</div>
-        <div class="skill-card-desc">Analyse trends, identify opportunities, and uncover actionable business insights.</div>
-        <div class="skill-card-checks">
-          <span class="skill-check">Sales analysis</span>
-          <span class="skill-check">Financial reporting</span>
-          <span class="skill-check">Inventory analytics</span>
-          <span class="skill-check">Marketing analytics</span>
-          <span class="skill-check">Forecasting</span>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">E-Learning Platform</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Skills-based e-learning platform with a multi-page layout — course catalog, progress tracking, and assessment modules built for learners who want a clear path from skill gaps to outcomes.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Learners had no structured path from identifying skill gaps to achieving outcomes</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built multi-page platform with course catalog, progress tracking, and assessments</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Clear learning journey from enrollment to skill achievement in one place</span></div>
+</div><div class="project-chips"><span class="chip">Web Dev</span><span class="chip">E-Learning</span><span class="chip">UI Design</span></div></div>
 
-      <div class="skill-card">
-        <div class="skill-card-title">Process Improvement</div>
-        <div class="skill-card-desc">Streamline workflows and eliminate manual processes using automation.</div>
-        <div class="skill-card-checks">
-          <span class="skill-check">Business process mapping</span>
-          <span class="skill-check">SOP optimisation</span>
-          <span class="skill-check">Apps Script</span>
-          <span class="skill-check">Tool integrations</span>
-          <span class="skill-check">Operational efficiency</span>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="looker">
+<div class="project-img-wrap"><span class="cat-badge">Looker Studio · CRM &amp; Sales</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="leads-tracker-demo.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-      <div class="skill-card">
-        <div class="skill-card-title">Custom Internal Tools</div>
-        <div class="skill-card-desc">Build tailored web applications to support your team&rsquo;s daily operations.</div>
-        <div class="skill-card-checks">
-          <span class="skill-check">Internal portals</span>
-          <span class="skill-check">Dashboards</span>
-          <span class="skill-check">Web Applications</span>
-          <span class="skill-check">Lovable</span>
-          <span class="skill-check">Vercel</span>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Leads Tracker</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales leads dashboard tracking total leads, conversion rates, and pipeline health — with breakdowns by status and location so sales teams can prioritise follow-ups at a glance.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Sales team had no visibility into pipeline health or where leads were dropping off</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Looker Studio dashboard tracking leads, conversion rates, and status by location</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Sales teams can instantly prioritise follow-ups without digging through spreadsheets</span></div>
+</div><div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Sales Pipeline</span><span class="chip">Lead Tracking</span><span class="chip">CRM</span></div></div>
 
-      <div class="skill-card">
-        <div class="skill-card-title">Product &amp; Business Strategy</div>
-        <div class="skill-card-desc">Translate business problems into practical digital solutions.</div>
-        <div class="skill-card-checks">
-          <span class="skill-check">Requirements gathering</span>
-          <span class="skill-check">Product strategy</span>
-          <span class="skill-check">Market research</span>
-          <span class="skill-check">User stories</span>
-          <span class="skill-check">Gap analysis</span>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="excel">
+<div class="carousel-wrap" data-carousel=""><span class="cat-badge">Google Sheets · Financial Reporting</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<div class="carousel-track">
+<div class="carousel-slide"><img alt="Financial Dashboard Overview" loading="eager" src="Excel GSheet Dashboard/Google Sheet Dashboard 1.png"/></div>
+<div class="carousel-slide"><img alt="Financial Dashboard Trends" loading="eager" src="Excel GSheet Dashboard/Google Sheet Dashboard 2.png"/></div>
+</div>
+<button aria-label="Previous slide" class="carousel-arrow prev">←</button>
+<button aria-label="Next slide" class="carousel-arrow next">→</button>
+<div class="carousel-dots">
+<span class="carousel-dot active" data-index="0"></span>
+<span class="carousel-dot" data-index="1"></span>
+</div>
 
-    </div>
-  </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Financial Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Google Sheets financial dashboard with P&amp;L summary, income vs expenses trends, and key ratios like gross profit margin and operating margin — connected to live data for monthly reporting.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Finance team manually compiling P&amp;L reports from multiple spreadsheets each month</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built connected Google Sheets dashboard with live P&amp;L, expense trends, and key ratios</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Monthly reporting automated — always current, no manual data compilation</span></div>
+</div><div class="project-chips"><span class="chip">Google Sheets</span><span class="chip">Financial Reporting</span><span class="chip">P&amp;L</span><span class="chip">Business Finance</span></div></div>
 
-  <hr class="sec-div" />
+</div>
+</div>
+<div class="project-item" data-tool="powerbi">
+<div class="project-img-wrap"><span class="cat-badge">Power BI · Supply Chain</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<img alt="Warehouse Dashboard" loading="eager" src="Power BI/Warehouse Dashboard - Power BI.png"/>
 
-  <!-- PROJECTS -->
-  <div class="projects-wrap" id="projects">
-    <p class="section-label" style="margin-bottom:10px;">Sample Projects</p>
-    <p style="font-size:14px;color:var(--text-dim);margin-bottom:16px;line-height:1.6;">Click any tile for a closer look — full problem, solution &amp; result breakdown.</p>
-    <p style="font-size:11px;color:var(--text-mute);margin-top:4px;margin-bottom:16px;line-height:1.6;">* All dashboards use dummy data or have been redacted for client confidentiality.</p>
+</div>
+<div class="project-item-body"><h3 class="project-title">Warehouse Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs — built to give an ops team a daily snapshot without digging through raw data.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Ops team spending hours pulling raw data daily to track warehouse performance</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Power BI dashboard with inbound/outbound flow, inventory turnover, and KPIs</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Daily snapshot available in one click — no more manual data pulls</span></div>
+</div><div class="project-chips"><span class="chip">Power BI</span><span class="chip">Supply Chain</span><span class="chip">Operations</span></div></div>
 
-    <div class="filter-chips">
-      <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="ai">AI Tools</button>
-      <button class="filter-chip" data-filter="webdev">Website Dev</button>
-      <button class="filter-chip" data-filter="powerbi">Power BI</button>
-      <button class="filter-chip" data-filter="looker">Looker Studio</button>
-      <button class="filter-chip" data-filter="excel">Excel &amp; Sheets</button>
-    </div>
+</div>
+</div>
+<div class="project-item featured-tile" data-tool="powerbi">
+<div class="project-img-wrap"><span class="cat-badge">Power BI · Sales &amp; Customers</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<img alt="Sales and Customers Analysis" loading="eager" src="sales_pbi.png"/>
 
-    <div class="projects-grid" id="projectsGrid">
+</div>
+<div class="project-item-body"><h3 class="project-title">Sales and Customers Analysis</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales and customer analysis dashboard tracking monthly sales, category breakdown, top customers, and rep performance — built in Power BI with interactive filters.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Leadership had no clear view of sales trends, top customers, or rep performance</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Power BI dashboard with interactive filters across categories, customers, and reps</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Deeper understanding of customer behavior — purchase frequency, basket size, last purchase date — enabling smarter retention and upsell decisions</span></div>
+</div><div class="project-chips"><span class="chip">Power BI</span><span class="chip">Sales Analytics</span><span class="chip">Customer Analysis</span></div></div>
 
-      <div class="project-item" data-tool="ai">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="lovable-short.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Featured &middot; AI App</span>
-            <p class="overlay-title">Innovation Analytics Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Full-stack analytics app built with AI &mdash; multi-page dashboard with Sankey diagrams, use-gap analysis, and AI-generated insights, all filterable by center, country, and funding source.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Innovation data scattered across sources with no unified view</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI-powered full-stack app with Sankey diagrams, use-gap analysis, and AI insights</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Multi-page dashboard with real-time filtering by center, country, and funding source</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Lovable</span><span class="chip">React</span><span class="chip">Data Visualisation</span></div>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="looker">
+<div class="project-img-wrap"><span class="cat-badge">Looker Studio · Retail</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<img alt="Sales Dashboard Looker Studio" loading="eager" src="GDS Looker/Sales Dashboard - Looker Studio.png"/>
 
-      <div class="project-item" data-tool="ai">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="bizanalyst-demo.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">AI Tool</span>
-            <p class="overlay-title">BizAnalyst AI Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Upload Excel or connect Google Sheets, get an automated interactive dashboard in return &mdash; built with a chatbot interface so non-technical users can explore data and generate insights without any setup.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Non-technical users couldn&rsquo;t explore data without relying on an analyst</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI chatbot that turns uploaded Excel files into interactive dashboards instantly</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Self-serve analytics for any user &mdash; no setup, no technical skills required</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Claude AI</span><span class="chip">Data Automation</span><span class="chip">Excel Integration</span></div>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Sales Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales performance dashboard for a retail client — tracks revenue by channel, region, and product category, connected live to data sources for an always up-to-date view.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Retail client’s sales data was siloed across channels and regions with no unified view</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Looker Studio dashboard connected live to data sources across all channels</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Always up-to-date revenue view by channel, region, and product — no refresh needed</span></div>
+</div><div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Retail</span><span class="chip">Live Data</span></div></div>
 
-      <div class="project-item" data-tool="ai">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="ai-marketing-demo.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">AI Tool</span>
-            <p class="overlay-title">Marketing Agent</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">AI agent handling end-to-end marketing workflows &mdash; content generation, campaign planning, and scheduling. Built to help small teams move faster without a dedicated marketing hire.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Small team spending hours manually on content creation and campaign planning</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI agent to automate content generation, scheduling, and campaign workflows end-to-end</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Full marketing execution without a dedicated hire &mdash; faster output, less manual work</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Claude AI</span><span class="chip">Automation</span><span class="chip">Content Generation</span></div>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="looker">
+<div class="project-img-wrap"><span class="cat-badge">Looker Studio · Digital Analytics</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<img alt="Google Analytics Dashboard" loading="eager" src="GDS Looker/Google Analytics 1 - Looker Studio.png"/>
 
+</div>
+<div class="project-item-body"><h3 class="project-title">Google Analytics Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Live digital analytics dashboard connecting GA data to Looker Studio — gives marketing teams a real-time view of traffic, engagement, and conversion without logging into GA.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Marketing team had to log into GA separately and export data for every report</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Connected GA data to Looker Studio for a centralised, always-live shareable dashboard</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Real-time traffic, engagement, and conversion view — no GA login required</span></div>
+</div><div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Google Analytics</span><span class="chip">Digital Marketing</span></div></div>
 
-      <div class="project-item" data-tool="ai">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="simplifyingleads.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">AI Tool</span>
-            <p class="overlay-title">AI Lead Generator</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">End-to-end lead generation tool &mdash; finds target companies, discovers contact emails, drafts personalised outreach, and sends directly via Gmail. Built to turn hours of manual prospecting into minutes.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Sales team spending hours manually prospecting and writing personalised outreach</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built AI tool to find companies, discover emails, draft messages, and send via Gmail</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Hours of manual prospecting reduced to minutes with zero copy-paste required</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">AI Tools</span><span class="chip">Lead Generation</span><span class="chip">Gmail Integration</span><span class="chip">Automation</span></div>
-        </div>
-      </div>
-      <div class="project-item" data-tool="webdev">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="website-skillpath.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Web Development &middot; Education</span>
-            <p class="overlay-title">E-Learning Platform</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Skills-based e-learning platform with a multi-page layout &mdash; course catalog, progress tracking, and assessment modules built for learners who want a clear path from skill gaps to outcomes.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Learners had no structured path from identifying skill gaps to achieving outcomes</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built multi-page platform with course catalog, progress tracking, and assessments</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Clear learning journey from enrollment to skill achievement in one place</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Web Dev</span><span class="chip">E-Learning</span><span class="chip">UI Design</span></div>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="looker">
+<div class="carousel-wrap" data-carousel=""><span class="cat-badge">Looker Studio · Digital Marketing</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<div class="carousel-track">
+<div class="carousel-slide"><img alt="Google Ads Overview" loading="eager" src="GDS Looker/Google Ads 1 - Looker Studio.png"/></div>
+<div class="carousel-slide"><img alt="Google Ads Campaigns" loading="eager" src="GDS Looker/Google Ads 2 - Looker Studio.png"/></div>
+</div>
+<button aria-label="Previous slide" class="carousel-arrow prev">←</button>
+<button aria-label="Next slide" class="carousel-arrow next">→</button>
+<div class="carousel-dots">
+<span class="carousel-dot active" data-index="0"></span>
+<span class="carousel-dot" data-index="1"></span>
+</div>
 
-      <div class="project-item" data-tool="looker">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="leads-tracker-demo.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Looker Studio &middot; CRM &amp; Sales</span>
-            <p class="overlay-title">Leads Tracker</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales leads dashboard tracking total leads, conversion rates, and pipeline health &mdash; with breakdowns by status and location so sales teams can prioritise follow-ups at a glance.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Sales team had no visibility into pipeline health or where leads were dropping off</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Looker Studio dashboard tracking leads, conversion rates, and status by location</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Sales teams can instantly prioritise follow-ups without digging through spreadsheets</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Sales Pipeline</span><span class="chip">Lead Tracking</span><span class="chip">CRM</span></div>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Marketing Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">End-to-end marketing dashboard covering site traffic, audience behaviour, and Google Ads performance — giving teams a single view to track spend, conversions, and channel effectiveness.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Marketing spend and performance data scattered across GA and multiple ad platforms</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built unified Looker Studio dashboard covering traffic, audience, and ad performance</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Single view to track spend, conversions, and channel effectiveness in real time</span></div>
+</div><div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Google Analytics</span><span class="chip">Google Ads</span><span class="chip">Digital Marketing</span></div></div>
 
-      <div class="project-item" data-tool="excel">
-        <div class="carousel-wrap" data-carousel>
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="Excel GSheet Dashboard/Google Sheet Dashboard 1.png" alt="Financial Dashboard Overview" loading="eager" /></div>
-            <div class="carousel-slide"><img src="Excel GSheet Dashboard/Google Sheet Dashboard 2.png" alt="Financial Dashboard Trends" loading="eager" /></div>
-          </div>
-          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
-          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
-          <div class="carousel-dots">
-            <span class="carousel-dot active" data-index="0"></span>
-            <span class="carousel-dot" data-index="1"></span>
-          </div>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Google Sheets &middot; Financial Reporting</span>
-            <p class="overlay-title">Financial Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Google Sheets financial dashboard with P&amp;L summary, income vs expenses trends, and key ratios like gross profit margin and operating margin &mdash; connected to live data for monthly reporting.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Finance team manually compiling P&amp;L reports from multiple spreadsheets each month</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built connected Google Sheets dashboard with live P&amp;L, expense trends, and key ratios</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Monthly reporting automated &mdash; always current, no manual data compilation</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Google Sheets</span><span class="chip">Financial Reporting</span><span class="chip">P&amp;L</span><span class="chip">Business Finance</span></div>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item featured-tile" data-tool="excel">
+<div class="carousel-wrap" data-carousel=""><span class="cat-badge">Excel · Performance Marketing</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<div class="carousel-track">
+<div class="carousel-slide"><img alt="Performance Marketing CTR Dashboard" loading="eager" src="Excel GSheet Dashboard/Excel Dashboard Sample 3.png"/></div>
+<div class="carousel-slide"><img alt="Performance Marketing Summary" loading="eager" src="Excel GSheet Dashboard/Excel Dashboard Sample 2.png"/></div>
+</div>
+<button aria-label="Previous slide" class="carousel-arrow prev">←</button>
+<button aria-label="Next slide" class="carousel-arrow next">→</button>
+<div class="carousel-dots">
+<span class="carousel-dot active" data-index="0"></span>
+<span class="carousel-dot" data-index="1"></span>
+</div>
 
-      <div class="project-item" data-tool="powerbi">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <img src="Power BI/Warehouse Dashboard - Power BI.png" alt="Warehouse Dashboard" loading="eager" />
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Power BI &middot; Supply Chain</span>
-            <p class="overlay-title">Warehouse Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Multi-page operational dashboard tracking inbound/outbound flow, inventory turnover, and warehouse KPIs &mdash; built to give an ops team a daily snapshot without digging through raw data.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Ops team spending hours pulling raw data daily to track warehouse performance</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Power BI dashboard with inbound/outbound flow, inventory turnover, and KPIs</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Daily snapshot available in one click &mdash; no more manual data pulls</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Power BI</span><span class="chip">Supply Chain</span><span class="chip">Operations</span></div>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Performance Marketing Dashboard</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Multi-tab Excel dashboard tracking CTR, ROAS, impressions, and conversions across retail placements and brands — built for weekly performance reviews and campaign optimisation.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Campaign performance tracked in separate files with no consolidated weekly view</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built multi-tab Excel dashboard consolidating CTR, ROAS, impressions, and conversions</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Weekly reviews ready in minutes — clear comparison across brands and placements</span></div>
+</div><div class="project-chips"><span class="chip">Excel</span><span class="chip">Performance Marketing</span><span class="chip">CTR &amp; ROAS</span><span class="chip">Retail Analytics</span></div></div>
 
-      <div class="project-item" data-tool="powerbi">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <img src="sales_pbi.png" alt="Sales and Customers Analysis" loading="eager" />
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Power BI &middot; Sales &amp; Customers</span>
-            <p class="overlay-title">Sales and Customers Analysis</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales and customer analysis dashboard tracking monthly sales, category breakdown, top customers, and rep performance &mdash; built in Power BI with interactive filters.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Leadership had no clear view of sales trends, top customers, or rep performance</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Power BI dashboard with interactive filters across categories, customers, and reps</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Deeper understanding of customer behavior &mdash; purchase frequency, basket size, last purchase date &mdash; enabling smarter retention and upsell decisions</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Power BI</span><span class="chip">Sales Analytics</span><span class="chip">Customer Analysis</span></div>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="webdev">
+<div class="project-img-wrap"><span class="cat-badge">Web Development · Education</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="website-klaud.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-      <div class="project-item" data-tool="looker">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <img src="GDS Looker/Sales Dashboard - Looker Studio.png" alt="Sales Dashboard Looker Studio" loading="eager" />
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Looker Studio &middot; Retail</span>
-            <p class="overlay-title">Sales Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Sales performance dashboard for a retail client &mdash; tracks revenue by channel, region, and product category, connected live to data sources for an always up-to-date view.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Retail client&rsquo;s sales data was siloed across channels and regions with no unified view</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built Looker Studio dashboard connected live to data sources across all channels</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Always up-to-date revenue view by channel, region, and product &mdash; no refresh needed</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Retail</span><span class="chip">Live Data</span></div>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">E-Learning Platform</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Indonesian e-learning platform with a clean, conversion-focused landing page — course listings, pricing tiers, and a streamlined enrollment flow built to turn visitors into paying students.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">E-learning provider needed a professional site to convert visitors into paying students</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built conversion-focused landing page with course listings, pricing tiers, and enrollment flow</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Modern, credible platform designed to drive sign-ups from first visit</span></div>
+</div><div class="project-chips"><span class="chip">Web Dev</span><span class="chip">E-Learning</span><span class="chip">UI Design</span></div></div>
 
-      <div class="project-item" data-tool="looker">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <img src="GDS Looker/Google Analytics 1 - Looker Studio.png" alt="Google Analytics Dashboard" loading="eager" />
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Looker Studio &middot; Digital Analytics</span>
-            <p class="overlay-title">Google Analytics Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Live digital analytics dashboard connecting GA data to Looker Studio &mdash; gives marketing teams a real-time view of traffic, engagement, and conversion without logging into GA.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Marketing team had to log into GA separately and export data for every report</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Connected GA data to Looker Studio for a centralised, always-live shareable dashboard</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Real-time traffic, engagement, and conversion view &mdash; no GA login required</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Google Analytics</span><span class="chip">Digital Marketing</span></div>
-        </div>
-      </div>
+</div>
+</div>
+<div class="project-item" data-tool="webdev">
+<div class="project-img-wrap"><span class="cat-badge">Web Development · Data</span>
+<span class="zoom-icon"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="11" x2="11" y1="8" y2="14"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg></span>
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata" src="website-simplifyingdata.mp4" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
 
-      <div class="project-item" data-tool="looker">
-        <div class="carousel-wrap" data-carousel>
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="GDS Looker/Google Ads 1 - Looker Studio.png" alt="Google Ads Overview" loading="eager" /></div>
-            <div class="carousel-slide"><img src="GDS Looker/Google Ads 2 - Looker Studio.png" alt="Google Ads Campaigns" loading="eager" /></div>
-          </div>
-          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
-          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
-          <div class="carousel-dots">
-            <span class="carousel-dot active" data-index="0"></span>
-            <span class="carousel-dot" data-index="1"></span>
-          </div>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Looker Studio &middot; Digital Marketing</span>
-            <p class="overlay-title">Marketing Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">End-to-end marketing dashboard covering site traffic, audience behaviour, and Google Ads performance &mdash; giving teams a single view to track spend, conversions, and channel effectiveness.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Marketing spend and performance data scattered across GA and multiple ad platforms</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built unified Looker Studio dashboard covering traffic, audience, and ad performance</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Single view to track spend, conversions, and channel effectiveness in real time</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Looker Studio</span><span class="chip">Google Analytics</span><span class="chip">Google Ads</span><span class="chip">Digital Marketing</span></div>
-        </div>
-      </div>
+</div>
+<div class="project-item-body"><h3 class="project-title">Digital Platform</h3>
+<p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Data literacy digital platform with a structured course marketplace, checkout flow, and user dashboard — designed to make data skills accessible with a clean, modern interface.</p>
+<div class="card-hidden"><div class="psr">
+<div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Data education brand needed an online marketplace to sell courses at scale</span></div>
+<div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built digital platform with course marketplace, checkout flow, and user dashboard</span></div>
+<div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Fully operational platform with clean interface — ready to scale from day one</span></div>
+</div><div class="project-chips"><span class="chip">Web Dev</span><span class="chip">Digital Platform</span><span class="chip">Marketplace</span></div></div>
 
-      <div class="project-item" data-tool="excel">
-        <div class="carousel-wrap" data-carousel>
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="Excel GSheet Dashboard/Excel Dashboard Sample 3.png" alt="Performance Marketing CTR Dashboard" loading="eager" /></div>
-            <div class="carousel-slide"><img src="Excel GSheet Dashboard/Excel Dashboard Sample 2.png" alt="Performance Marketing Summary" loading="eager" /></div>
-          </div>
-          <button class="carousel-arrow prev" aria-label="Previous slide">&#8592;</button>
-          <button class="carousel-arrow next" aria-label="Next slide">&#8594;</button>
-          <div class="carousel-dots">
-            <span class="carousel-dot active" data-index="0"></span>
-            <span class="carousel-dot" data-index="1"></span>
-          </div>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Excel &middot; Performance Marketing</span>
-            <p class="overlay-title">Performance Marketing Dashboard</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Multi-tab Excel dashboard tracking CTR, ROAS, impressions, and conversions across retail placements and brands &mdash; built for weekly performance reviews and campaign optimisation.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Campaign performance tracked in separate files with no consolidated weekly view</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built multi-tab Excel dashboard consolidating CTR, ROAS, impressions, and conversions</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Weekly reviews ready in minutes &mdash; clear comparison across brands and placements</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Excel</span><span class="chip">Performance Marketing</span><span class="chip">CTR &amp; ROAS</span><span class="chip">Retail Analytics</span></div>
-        </div>
-      </div>
-
-      <div class="project-item" data-tool="webdev">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="website-klaud.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Web Development &middot; Education</span>
-            <p class="overlay-title">E-Learning Platform</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Indonesian e-learning platform with a clean, conversion-focused landing page &mdash; course listings, pricing tiers, and a streamlined enrollment flow built to turn visitors into paying students.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">E-learning provider needed a professional site to convert visitors into paying students</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built conversion-focused landing page with course listings, pricing tiers, and enrollment flow</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Modern, credible platform designed to drive sign-ups from first visit</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Web Dev</span><span class="chip">E-Learning</span><span class="chip">UI Design</span></div>
-        </div>
-      </div>
-
-      <div class="project-item" data-tool="webdev">
-        <div class="project-img-wrap">
-          <span class="zoom-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span>
-          <video preload="metadata" src="website-simplifyingdata.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-          <div class="project-img-overlay">
-            <span class="overlay-cat">Web Development &middot; Data</span>
-            <p class="overlay-title">Digital Platform</p>
-          </div>
-        </div>
-        <div class="project-item-body">
-          <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:6px;">Data literacy digital platform with a structured course marketplace, checkout flow, and user dashboard &mdash; designed to make data skills accessible with a clean, modern interface.</p>
-          <div class="psr">
-            <div class="psr-row"><span class="psr-label">Problem</span><span class="psr-arrow">→</span><span class="psr-text">Data education brand needed an online marketplace to sell courses at scale</span></div>
-            <div class="psr-row"><span class="psr-label">Solution</span><span class="psr-arrow">→</span><span class="psr-text">Built digital platform with course marketplace, checkout flow, and user dashboard</span></div>
-            <div class="psr-row"><span class="psr-label">Result</span><span class="psr-arrow">→</span><span class="psr-text">Fully operational platform with clean interface &mdash; ready to scale from day one</span></div>
-          </div>
-          <div class="project-chips"><span class="chip">Web Dev</span><span class="chip">Digital Platform</span><span class="chip">Marketplace</span></div>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="proj-nav" id="projNav">
-      <div class="carousel-arrows">
-        <button class="carousel-btn" id="projPrev" aria-label="Previous">&#8592;</button>
-        <button class="carousel-btn" id="projNext" aria-label="Next">&#8594;</button>
-      </div>
-      <span class="carousel-counter" id="projPage"></span>
-    </div>
-  </div>
-
-  <hr class="sec-div" />
-
-  <!-- CAREER -->
-  <div class="career-wrap" id="career">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
-      <p class="section-label" style="margin-bottom:0;">Career History</p>
-      <a href="Julia Utomo_Resume.pdf" download="Julia Utomo_Resume.pdf" class="btn btn-outline" style="font-size:13px;padding:10px 20px;display:inline-flex;align-items:center;gap:8px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+</div>
+</div>
+</div>
+<div class="proj-nav" id="projNav">
+<div class="carousel-arrows">
+<button aria-label="Previous" class="carousel-btn" id="projPrev">←</button>
+<button aria-label="Next" class="carousel-btn" id="projNext">→</button>
+</div>
+<span class="carousel-counter" id="projPage"></span>
+</div>
+</div>
+<hr class="sec-div"/>
+<!-- CAREER -->
+<div class="career-wrap" id="career">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
+<p class="section-label" style="margin-bottom:0;">Career History</p>
+<a class="btn btn-outline" download="Julia Utomo_Resume.pdf" href="Julia Utomo_Resume.pdf" style="font-size:13px;padding:10px 20px;display:inline-flex;align-items:center;gap:8px;">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
         Download CV
       </a>
-    </div>
-
-    <div class="career-item">
-      <div class="career-date">Nov 2023 &mdash; <strong>Present</strong></div>
-      <div class="career-content">
-        <h4>Business / Data Analyst Consultant</h4>
-        <div class="company">Freelance</div>
-        <p>Working with clients across Financial Services, Non-Profit, F&amp;B, Manufacturing, and Real Estate to build dashboards, automate reporting, and make data actually usable. Also building AI-powered tools and automation projects on the side.</p>
-      </div>
-    </div>
-
-    <div class="career-item">
-      <div class="career-date">Oct 2022 &mdash; Nov 2023</div>
-      <div class="career-content">
-        <h4>Product Manager II &mdash; Supply Chain</h4>
-        <div class="company">GudangAda &middot; Jakarta</div>
-        <p>Led product for procurement, warehouse management, and transport management systems at one of Indonesia&rsquo;s largest B2B e-commerce platforms. Improved fleet productivity by ~30% through smarter routing and planning features.</p>
-      </div>
-    </div>
-
-    <div class="career-item">
-      <div class="career-date">Jan 2021 &mdash; Apr 2022</div>
-      <div class="career-content">
-        <h4>Product Owner</h4>
-        <div class="company">Anteraja &middot; Jakarta</div>
-        <p>Built and launched a referral program that drove ~18% of new user registrations in its first month. Cut maps API cost by 85% through data-driven optimisation. Grew loyalty and promo features contributing to ~28% average monthly user growth.</p>
-      </div>
-    </div>
-
-    <div class="career-item">
-      <div class="career-date">Jan 2019 &mdash; Sep 2020</div>
-      <div class="career-content">
-        <h4>Management Consultant</h4>
-        <div class="company">Kearney &middot; Jakarta</div>
-        <p>Strategy and implementation projects for healthcare and government clients. Built end-to-end performance dashboards using Power BI and SQL, and led operational efficiency programs across manufacturing plants and retail networks.</p>
-      </div>
-    </div>
-
-  </div>
-
-
-  <!-- EDUCATION -->
-  <div class="career-wrap" id="education">
-    <p class="section-label">Education</p>
-
-    <div class="career-item">
-      <div class="career-date">Sep 2015 &mdash; Jun 2017</div>
-      <div class="career-content">
-        <h4>Bachelor of Science &mdash; Financial Actuarial Mathematics</h4>
-        <div class="company">University of California, Los Angeles (UCLA) &middot; CA, United States</div>
-        <p>GPA 3.78/4.00 &middot; Dean&rsquo;s Honors List &middot; Member of Bruin Actuarial Society</p>
-      </div>
-    </div>
-
-    <div class="career-item">
-      <div class="career-date">Sep 2013 &mdash; Jun 2015</div>
-      <div class="career-content">
-        <h4>Associate of Science &mdash; Mathematics</h4>
-        <div class="company">Edmonds Community College &middot; Lynnwood, WA, United States</div>
-        <p>GPA 3.98/4.00 &middot; Outstanding Math Student Award &middot; ISS Merit Scholarship</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-inner">
-      <div>
-        <p class="contact-label">Get in Touch</p>
-        <h2>Let&rsquo;s collaborate</h2>
-        <p>Open to project-based, freelance, part-time, full-time &amp; remote or relocation opportunities.</p>
-      </div>
-      <div class="contact-btns">
-        <a class="contact-email-btn" href="mailto:julia.utomo@gmail.com">Let&rsquo;s Connect &rarr;</a>
-        <a class="contact-linkedin-btn" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn &#8599;</a>
-      </div>
-    </div>
-
-    <div class="contact-form-wrap">
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdekoejv" method="POST">
-        <div class="form-row">
-          <div class="form-field">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your full name" required />
-          </div>
-          <div class="form-field">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@company.com" required />
-          </div>
-        </div>
-        <div class="form-field">
-          <label>Project Type</label>
-          <select name="projectType">
-            <option value="">Select an option</option>
-            <option>Dashboard / BI</option>
-            <option>AI Automation &amp; Tools</option>
-            <option>Data Analysis</option>
-            <option>Custom Internal Tool / Web App</option>
-            <option>Process Improvement</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-field" style="border-bottom:none;">
-          <label>Project Notes</label>
-          <textarea name="notes" placeholder="A few sentences about what you're trying to figure out..." rows="4" required></textarea>
-        </div>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-        <button type="submit" class="form-submit" id="formSubmitBtn">Send Message <span>&#8599;</span></button>
-      </form>
-      <div id="formStatus" class="form-status" style="display:none;"></div>
-      <p class="form-note">Sent directly to julia.utomo@gmail.com. Prefer plain email? Write to <a href="mailto:julia.utomo@gmail.com" style="color:#2b3800;text-decoration:underline;">julia.utomo@gmail.com</a> instead.</p>
-    </div>
-  </section>
-
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox-backdrop" id="lightbox">
-    <div class="lightbox-inner" id="lightboxInner">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-    </div>
-  </div>
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-  <script defer src="/_vercel/insights/script.js"></script>
-
-  <script>
+</div>
+<div class="career-item">
+<div class="career-date">Nov 2023 — <strong>Present</strong></div>
+<div class="career-content">
+<h4>Business / Data Analyst Consultant</h4>
+<div class="company">Freelance</div>
+<p>Working with clients across Financial Services, Non-Profit, F&amp;B, Manufacturing, and Real Estate to build dashboards, automate reporting, and make data actually usable. Also building AI-powered tools and automation projects on the side.</p>
+</div>
+</div>
+<div class="career-item">
+<div class="career-date">Oct 2022 — Nov 2023</div>
+<div class="career-content">
+<h4>Product Manager II — Supply Chain</h4>
+<div class="company">GudangAda · Jakarta</div>
+<p>Led product for procurement, warehouse management, and transport management systems at one of Indonesia’s largest B2B e-commerce platforms. Improved fleet productivity by ~30% through smarter routing and planning features.</p>
+</div>
+</div>
+<div class="career-item">
+<div class="career-date">Jan 2021 — Apr 2022</div>
+<div class="career-content">
+<h4>Product Owner</h4>
+<div class="company">Anteraja · Jakarta</div>
+<p>Built and launched a referral program that drove ~18% of new user registrations in its first month. Cut maps API cost by 85% through data-driven optimisation. Grew loyalty and promo features contributing to ~28% average monthly user growth.</p>
+</div>
+</div>
+<div class="career-item">
+<div class="career-date">Jan 2019 — Sep 2020</div>
+<div class="career-content">
+<h4>Management Consultant</h4>
+<div class="company">Kearney · Jakarta</div>
+<p>Strategy and implementation projects for healthcare and government clients. Built end-to-end performance dashboards using Power BI and SQL, and led operational efficiency programs across manufacturing plants and retail networks.</p>
+</div>
+</div>
+</div>
+<!-- EDUCATION -->
+<div class="career-wrap" id="education">
+<p class="section-label">Education</p>
+<div class="career-item">
+<div class="career-date">Sep 2015 — Jun 2017</div>
+<div class="career-content">
+<h4>Bachelor of Science — Financial Actuarial Mathematics</h4>
+<div class="company">University of California, Los Angeles (UCLA) · CA, United States</div>
+<p>GPA 3.78/4.00 · Dean’s Honors List · Member of Bruin Actuarial Society</p>
+</div>
+</div>
+<div class="career-item">
+<div class="career-date">Sep 2013 — Jun 2015</div>
+<div class="career-content">
+<h4>Associate of Science — Mathematics</h4>
+<div class="company">Edmonds Community College · Lynnwood, WA, United States</div>
+<p>GPA 3.98/4.00 · Outstanding Math Student Award · ISS Merit Scholarship</p>
+</div>
+</div>
+</div>
+<!-- CONTACT -->
+<section id="contact">
+<div class="contact-inner">
+<div>
+<p class="contact-label">Get in Touch</p>
+<h2>Let’s collaborate</h2>
+<p>Open to project-based, freelance, part-time, full-time &amp; remote or relocation opportunities.</p>
+</div>
+<div class="contact-btns">
+<a class="contact-email-btn" href="mailto:julia.utomo@gmail.com">Let’s Connect →</a>
+<a class="contact-linkedin-btn" href="https://www.linkedin.com/in/juliautomo" target="_blank">LinkedIn ↗</a>
+</div>
+</div>
+<div class="contact-form-wrap">
+<form action="https://formspree.io/f/mdekoejv" class="contact-form" id="contactForm" method="POST">
+<div class="form-row">
+<div class="form-field">
+<label>Name</label>
+<input name="name" placeholder="Your full name" required="" type="text"/>
+</div>
+<div class="form-field">
+<label>Email</label>
+<input name="email" placeholder="you@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="form-field">
+<label>Project Type</label>
+<select name="projectType">
+<option value="">Select an option</option>
+<option>Dashboard / BI</option>
+<option>AI Automation &amp; Tools</option>
+<option>Data Analysis</option>
+<option>Custom Internal Tool / Web App</option>
+<option>Process Improvement</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-field" style="border-bottom:none;">
+<label>Project Notes</label>
+<textarea name="notes" placeholder="A few sentences about what you're trying to figure out..." required="" rows="4"></textarea>
+</div>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<button class="form-submit" id="formSubmitBtn" type="submit">Send Message <span>↗</span></button>
+</form>
+<div class="form-status" id="formStatus" style="display:none;"></div>
+<p class="form-note">Sent directly to julia.utomo@gmail.com. Prefer plain email? Write to <a href="mailto:julia.utomo@gmail.com" style="color:#2b3800;text-decoration:underline;">julia.utomo@gmail.com</a> instead.</p>
+</div>
+</section>
+<!-- LIGHTBOX -->
+<div class="lightbox-backdrop" id="lightbox">
+<div class="lightbox-inner" id="lightboxInner">
+<button aria-label="Close" class="lightbox-close" id="lightboxClose">×</button>
+</div>
+</div>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer="" src="/_vercel/insights/script.js"></script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
       var PER_PAGE = 4;
       var chips = document.querySelectorAll('.filter-chip');
@@ -1171,8 +1076,8 @@
       var info = document.createElement('div');
       info.className = 'lightbox-info';
 
-      var catEl = itemEl.querySelector('.overlay-cat');
-      var titleEl = itemEl.querySelector('.overlay-title');
+      var catEl = itemEl.querySelector('.cat-badge');
+      var titleEl = itemEl.querySelector('.project-title');
       var descEl = itemEl.querySelector('.project-item-body > p');
       var psrEl = itemEl.querySelector('.psr');
       var chipsEl = itemEl.querySelector('.project-chips');
@@ -1322,6 +1227,5 @@
     }
 
   </script>
-
 </body>
 </html>
