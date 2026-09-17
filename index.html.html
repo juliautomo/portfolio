@@ -429,6 +429,12 @@
     }
     .form-submit:hover { opacity: .9; }
     .form-note { font-size: 12.5px; color: #4a5c00; margin-top: 12px; }
+    .form-status {
+      margin-top: 14px; padding: 12px 16px; border-radius: 10px;
+      font-size: 13.5px; font-weight: 600;
+    }
+    .form-status.success { background: rgba(0,0,0,0.08); color: #16190a; }
+    .form-status.error { background: rgba(180,40,20,0.15); color: #7a1d0a; }
     @media (max-width: 700px) {
       .form-row { grid-template-columns: 1fr; }
       .form-row .form-field:first-child { border-right: none; border-bottom: 1px solid var(--line); }
@@ -1046,7 +1052,7 @@
     </div>
 
     <div class="contact-form-wrap">
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdekoejv" method="POST">
         <div class="form-row">
           <div class="form-field">
             <label>Name</label>
@@ -1071,11 +1077,13 @@
         </div>
         <div class="form-field" style="border-bottom:none;">
           <label>Project Notes</label>
-          <textarea name="notes" rows="4" placeholder="A few sentences about what you're trying to figure out..."></textarea>
+          <textarea name="notes" placeholder="A few sentences about what you're trying to figure out..." rows="4" required></textarea>
         </div>
-        <button type="submit" class="form-submit">Send Message <span>&#8599;</span></button>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <button type="submit" class="form-submit" id="formSubmitBtn">Send Message <span>&#8599;</span></button>
       </form>
-      <p class="form-note">Opens a pre-filled email to julia.utomo@gmail.com &mdash; nothing is sent without you hitting send.</p>
+      <div id="formStatus" class="form-status" style="display:none;"></div>
+      <p class="form-note">Sent directly to julia.utomo@gmail.com. Prefer plain email? Write to <a href="mailto:julia.utomo@gmail.com" style="color:#2b3800;text-decoration:underline;">julia.utomo@gmail.com</a> instead.</p>
     </div>
   </section>
 
@@ -1257,25 +1265,59 @@
     lb.addEventListener('click', function(e) { if (e.target === lb) closeLightbox(); });
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 
-    // Contact form → pre-filled email
+    // Contact form → Formspree (with mailto fallback if the request fails)
     var contactForm = document.getElementById('contactForm');
+    var formStatus = document.getElementById('formStatus');
+    var formSubmitBtn = document.getElementById('formSubmitBtn');
+
+    function showFormStatus(kind, message) {
+      formStatus.className = 'form-status ' + kind;
+      formStatus.textContent = message;
+      formStatus.style.display = 'block';
+    }
+
+    function mailtoFallback(name, email, type, notes) {
+      var subject = 'Project inquiry' + (type ? ' — ' + type : '') + (name ? ' from ' + name : '');
+      var bodyLines = ['Name: ' + name, 'Email: ' + email];
+      if (type) bodyLines.push('Project type: ' + type);
+      bodyLines.push('');
+      bodyLines.push(notes);
+      window.location.href = 'mailto:julia.utomo@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    }
+
     if (contactForm) {
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
+        formStatus.style.display = 'none';
+
         var name = contactForm.name.value.trim();
         var email = contactForm.email.value.trim();
         var type = contactForm.projectType.value;
         var notes = contactForm.notes.value.trim();
-        var subject = 'Project inquiry' + (type ? ' — ' + type : '') + (name ? ' from ' + name : '');
-        var bodyLines = [
-          'Name: ' + name,
-          'Email: ' + email
-        ];
-        if (type) bodyLines.push('Project type: ' + type);
-        bodyLines.push('');
-        bodyLines.push(notes);
-        var body = bodyLines.join('\n');
-        window.location.href = 'mailto:julia.utomo@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+        formSubmitBtn.disabled = true;
+        formSubmitBtn.textContent = 'Sending…';
+
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            showFormStatus('success', 'Thanks — your message is on its way. I’ll get back to you within 24 hours.');
+            contactForm.reset();
+          } else {
+            return response.json().then(function(data) {
+              throw new Error((data && data.errors) ? data.errors.map(function(x){return x.message;}).join(', ') : 'Submission failed');
+            });
+          }
+        }).catch(function() {
+          showFormStatus('error', 'Something went wrong sending that. Opening your email client instead — please hit send there.');
+          mailtoFallback(name, email, type, notes);
+        }).finally(function() {
+          formSubmitBtn.disabled = false;
+          formSubmitBtn.innerHTML = 'Send Message <span>&#8599;</span>';
+        });
       });
     }
 
