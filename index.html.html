@@ -1304,7 +1304,7 @@
           headers: { 'Accept': 'application/json' }
         }).then(function(response) {
           if (response.ok) {
-            showFormStatus('success', 'Thanks — your message is on its way. I’ll get back to you within 24 hours.');
+            showFormStatus('success', 'Thanks — your message is on its way. I’ll get back to you soon.');
             contactForm.reset();
           } else {
             return response.json().then(function(data) {
