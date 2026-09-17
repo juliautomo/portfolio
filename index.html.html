@@ -206,16 +206,16 @@
 
     /* ── PROJECTS ── */
     .projects-wrap { max-width: 888px; margin: 0 auto; padding: 64px 24px; }
-    .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
     .project-item {
       border: 1px solid var(--line); border-radius: 12px;
       overflow: hidden; background: var(--bg-soft);
       transition: border-color .2s, transform .2s;
     }
     .project-item:hover { border-color: rgba(215,255,63,.35); transform: translateY(-2px); }
-    .project-item.featured-tile { grid-column: span 2; }
+    .project-item.featured-tile { grid-column: span 3; }
     .project-item.featured-tile .project-img-wrap,
-    .project-item.featured-tile .carousel-wrap { aspect-ratio: 21/8; }
+    .project-item.featured-tile .carousel-wrap { aspect-ratio: 21/7; }
 
     .project-img-wrap {
       position: relative; width: 100%; aspect-ratio: 16/9;
